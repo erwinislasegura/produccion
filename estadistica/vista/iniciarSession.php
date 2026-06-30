@@ -42,60 +42,20 @@ $ARRAYTEMPORADA = $TEMPORADA_ADO->listarTemporadaCBX();
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="../../assest/js/sweetalert2@11.js"></script>
   <style>
+    :root{--vf-berry:#7f1734;--vf-berry-dark:#4d0d20;--vf-leaf:#4f8a2f;--vf-leaf-soft:#eaf4e4;--vf-ink:#263238;--vf-muted:#667085;--vf-border:#e6e9ef;--vf-card:rgba(255,255,255,.92);--vf-page-bg:url('../../assest/img/fondo.jpg')}
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-    body,html{height:100%;background:#f5f7fa;}
-    .container{display:flex;min-height:100vh}
-    .left-panel{
-        flex:1;max-width:420px;background:#fff;padding:40px;
-        display:flex;flex-direction:column;justify-content:center;
-        box-shadow:0 2px 10px rgba(0,0,0,.05);
-        border-right:3px solid #e0e6ef;
-        position:relative;
-    }
-    .left-panel::after{
-        content:'';position:absolute;right:-2px;top:0;bottom:0;width:2px;
-        background:linear-gradient(to bottom,#4caf50,#2196f3);
-    }
-    .logo{text-align:center;margin-bottom:25px}
-    .logo img{max-width:180px}
-    .logo p{color:#555;font-size:.9rem;margin-top:8px}
-    h2{text-align:center;color:#0a3a6a;font-size:1.3rem;margin-bottom:20px;font-weight:700}
-    .card{border:1px solid #e0e6ef;border-radius:12px;padding:20px;margin-bottom:15px;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
-    .card h3{font-size:16px;margin-bottom:15px;color:#1a2b4c}
-    form{width:100%;max-width:320px;margin:auto}
-    .form-input{width:100%;padding:12px;border:1px solid #ccd4e0;border-radius:8px;margin-bottom:15px;font-size:14px;transition:border-color 0.3s}
-    .form-input:focus{border-color:#4caf50;outline:none}
-    label{font-size:.85rem;color:#444;margin-bottom:4px;display:block;font-weight:600}
-    .btn{width:100%;padding:14px;border:none;border-radius:8px;font-weight:600;cursor:pointer;margin-bottom:10px;text-decoration:none;display:block;text-align:center;transition:all 0.3s}
-    .btn-login{background:#28a745;color:#fff;box-shadow:0 2px 4px rgba(40,167,69,0.3)}
-    .btn-login:hover{background:#218838;transform:translateY(-1px);box-shadow:0 4px 8px rgba(40,167,69,0.4)}
-    .btn-back{background:#dc3545;color:#fff;box-shadow:0 2px 4px rgba(220,53,69,0.3)}
-    .btn-back:hover{background:#b02a37;transform:translateY(-1px);box-shadow:0 4px 8px rgba(220,53,69,0.4)}
-    .btn-group{display:flex;gap:10px}
-    .btn-group .btn{margin-bottom:0;flex:1}
-    .ssl-legend {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-      color: #2e7d32;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    .ssl-legend .material-icons {
-      margin-right: 6px;
-      font-size: 20px;
-    }
-    .right-panel{flex:2;position:relative;overflow:hidden}
-    .slide{position:absolute;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s}
-    .slide.active{opacity:1}
-    @media(max-width:768px){
-      .container{flex-direction:column}
-      .left-panel{max-width:none;width:100%;border-right:none;border-bottom:3px solid #e0e6ef}
-      .left-panel::after{right:0;left:0;top:auto;bottom:-2px;width:auto;height:2px;background:linear-gradient(to right,#4caf50,#2196f3)}
-      .right-panel{height:220px}
-      .btn-group{flex-direction:column}
-    }
+    body,html{min-height:100%;background:#f7f8f5;color:var(--vf-ink)}
+    body{background-image:radial-gradient(circle at top left,rgba(127,23,52,.16),transparent 32%),linear-gradient(135deg,rgba(255,255,255,.92) 0%,rgba(245,248,239,.88) 100%),var(--vf-page-bg);background-size:auto,auto,cover;background-position:left top,center,center;background-repeat:no-repeat,no-repeat,no-repeat;background-attachment:fixed,fixed,fixed}
+    .container{display:flex;min-height:100vh;position:relative;overflow:hidden}
+    .left-panel{width:min(100%,460px);background:var(--vf-card);backdrop-filter:blur(18px);padding:48px 42px;display:flex;flex-direction:column;justify-content:center;box-shadow:24px 0 70px rgba(77,13,32,.10);z-index:2}
+    .logo{text-align:center;margin-bottom:28px}.logo img{max-width:220px;width:72%;height:auto}.logo p{margin-top:12px;color:var(--vf-muted);font-size:13px}.logo p a{color:var(--vf-berry);text-decoration:none;font-weight:600}.logo p a:hover{text-decoration:underline}
+    h2{text-align:center;margin-bottom:8px;color:var(--vf-berry-dark);font-weight:800;letter-spacing:.08em;font-size:20px;text-transform:uppercase}.subtitle{text-align:center;color:var(--vf-muted);font-size:14px;margin-bottom:24px;line-height:1.5}
+    .card{border:1px solid rgba(127,23,52,.11);border-radius:24px;padding:24px;background:#fff;box-shadow:0 22px 50px rgba(77,13,32,.10);margin-bottom:18px}.card h3{font-size:17px;margin-bottom:18px;color:var(--vf-berry-dark);display:flex;align-items:center;gap:8px}.card h3:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--vf-leaf);box-shadow:0 0 0 6px var(--vf-leaf-soft)}
+    label{font-size:13px;color:var(--vf-berry-dark);margin-bottom:7px;display:block;font-weight:800}.form-input{width:100%;padding:14px 15px;border:1px solid var(--vf-border);border-radius:14px;margin-bottom:14px;font-size:14px;background:#fbfcfb;transition:border-color .2s,box-shadow .2s,background .2s}.form-input:focus{outline:none;border-color:var(--vf-berry);box-shadow:0 0 0 4px rgba(127,23,52,.12);background:#fff}
+    .prefetch-option{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--vf-muted);line-height:1.4;margin:2px 0 14px}.prefetch-option input{accent-color:var(--vf-berry);margin-top:2px}.security-note{display:flex;align-items:center;justify-content:center;gap:7px;margin:12px 0 18px;color:var(--vf-leaf);font-weight:700;font-size:13px}.security-note .material-icons{font-size:19px}
+    .btn{width:100%;padding:14px;border:none;border-radius:14px;font-weight:800;cursor:pointer;text-decoration:none;display:block;text-align:center;transition:transform .2s,box-shadow .2s,background .2s}.btn:hover{transform:translateY(-1px)}.btn-login{background:linear-gradient(135deg,var(--vf-berry),#a52749);color:#fff;box-shadow:0 14px 28px rgba(127,23,52,.24)}.btn-login:hover{background:linear-gradient(135deg,var(--vf-berry-dark),var(--vf-berry))}.btn-login:disabled{background:#c7c7c7;box-shadow:none;cursor:not-allowed}.btn-link,.btn-back{color:var(--vf-berry-dark);border:1px solid rgba(127,23,52,.18);background:#fff;margin-top:4px}.btn-link:hover,.btn-back:hover{box-shadow:0 12px 26px rgba(77,13,32,.10)}.btn-group{display:flex;gap:10px}.btn-group .btn{flex:1}
+    .login-alert{color:#8a5a00;background:#fff7df;border:1px solid #ffe2a3;padding:12px 14px;border-radius:14px;margin-bottom:16px;font-size:13px;font-weight:600}.right-panel{flex:1;position:relative;overflow:hidden;background:#1f2a1d}.right-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(77,13,32,.28),rgba(22,44,19,.12)),radial-gradient(circle at 78% 18%,rgba(255,255,255,.20),transparent 28%);z-index:1}.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.04);transition:opacity 1.5s,transform 6s}.slide.active{opacity:1;transform:scale(1)}
+    @media(max-width:820px){.container{flex-direction:column}.left-panel{width:100%;padding:34px 22px}.right-panel{min-height:280px;order:-1}.logo img{max-width:190px}.btn-group{flex-direction:column}}
   </style>
   <link rel="stylesheet" href="../../assest/css/fruta-form-compact.css">
 
@@ -105,12 +65,13 @@ $ARRAYTEMPORADA = $TEMPORADA_ADO->listarTemporadaCBX();
     <div class="left-panel">
       <div class="logo">
         <img src="../../assest/img/logo2.png" alt="SmartBerry One">
-        <p>smartberryone.cl</p>
+        <p><a href="https://smartberryone.cl" target="_blank" rel="noopener noreferrer">smartberryone.cl</a></p>
       </div>
       <h2>PORTAL ESTADISTICAS</h2>
+      <p class="subtitle">Accede a indicadores y reportes con una experiencia segura, limpia y alineada a SmartBerry One.</p>
       <div class="card">
         <h3>Acceso Estadísticas</h3>
-        <form class="form-one-line" data-form-layout="oneline-1" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:0.65rem;padding:0.65rem 0;border-bottom:1px solid #3a3a3a;" method="post">
+        <form method="post" id="loginForm">
           <input type="text" class="form-input" placeholder="Nombre Usuario" name="NOMBRE" value="<?= $NOMBRE?>" required>
           <input type="password" class="form-input" placeholder="Contraseña" name="CONTRASENA" value="<?= $CONTRASENA?>" required>
 
@@ -137,17 +98,17 @@ $ARRAYTEMPORADA = $TEMPORADA_ADO->listarTemporadaCBX();
             <?php endforeach;?>
           </select>
 
-          <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:#333; margin-bottom:10px;">
+          <div class="prefetch-option">
             <input type="checkbox" id="PRECARGA_EXPORTACION_ESTADISTICA" style="margin-top:0;">
             <label for="PRECARGA_EXPORTACION_ESTADISTICA" style="margin-bottom:0;">Cargar información pesada en segundo plano</label>
           </div>
 
-          <div class="ssl-legend">
+          <div class="security-note">
             <span class="material-icons">lock</span>
             Conexión segura por SSL
           </div>
 
-          <div class="btn-group" style="margin-top:10px">
+          <div class="btn-group">
             <a href="../../" class="btn btn-back">Volver</a>
             <button type="submit" class="btn btn-login" name="ENTRAR">Entrar</button>
           </div>
@@ -157,8 +118,9 @@ $ARRAYTEMPORADA = $TEMPORADA_ADO->listarTemporadaCBX();
 
     <!-- Panel derecho -->
     <div class="right-panel">
-      <div class="slide" style="background-image:url('http://190.13.179.171:18069/smartberries%20-23-24/assest/img/arandano.jpg')"></div>
-<div class="slide" style="background-image:url('http://190.13.179.171:18069/smartberries%20-23-24/assest/img/esparragos.jpg')"></div><div class="slide" style="background-image:url('http://190.13.179.171:18069/smartberries%20-23-24/assest/img/abeja.jpg')"></div>
+      <div class="slide active" style="background-image:url('../../assest/img/abeja.jpg')"></div>
+      <div class="slide" style="background-image:url('../../assest/img/arandano.jpg')"></div>
+      <div class="slide" style="background-image:url('../../assest/img/esparragos.jpg')"></div>
     </div>
   </div>
 
@@ -166,7 +128,7 @@ $ARRAYTEMPORADA = $TEMPORADA_ADO->listarTemporadaCBX();
     const slides=document.querySelectorAll('.slide');let i=0;
     setInterval(()=>{slides[i].classList.remove('active');i=(i+1)%slides.length;slides[i].classList.add('active')},5000);
 
-    const loginForm = document.querySelector('form[method="post"]');
+    const loginForm = document.getElementById('loginForm');
     if (loginForm) {
       loginForm.addEventListener('submit', () => {
         const precarga = document.getElementById('PRECARGA_EXPORTACION_ESTADISTICA')?.checked;

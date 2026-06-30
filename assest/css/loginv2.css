@@ -8,14 +8,14 @@
 
 .login-logo a,
 .register-logo a {
-  color: #495057;
+  color: #1F2937;
 }
 
 .login-page,
 .register-page {
   -ms-flex-align: center;
   align-items: center;
-  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5) ), url('../../assest/img/loginimg1.jpg');
+  background-image: linear-gradient(rgba(12,36,97,0.58),rgba(12,36,97,0.58) ), url('../../assest/img/loginimg1.jpg');
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -34,7 +34,7 @@
 .register-page-exportadora {
   -ms-flex-align: center;
   align-items: center;
-  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5) ), url('../../assest/img/loginimg2.jpeg');
+  background-image: linear-gradient(rgba(12,36,97,0.58),rgba(12,36,97,0.58) ), url('../../assest/img/loginimg2.jpeg');
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -69,9 +69,9 @@
 
 .login-card-body,
 .register-card-body {
-  background-color: #fff;
+  background-color: #FFFFFF;
   border-top: 0;
-  color: #666;
+  color: #4A5568;
   padding: 20px;
 }
 
@@ -89,7 +89,7 @@
 .login-card-body .input-group .form-control:focus ~ .input-group-append .input-group-text,
 .register-card-body .input-group .form-control:focus ~ .input-group-prepend .input-group-text,
 .register-card-body .input-group .form-control:focus ~ .input-group-append .input-group-text {
-  border-color: #80bdff;
+  border-color: #2B6CB0;
 }
 
 .login-card-body .input-group .form-control.is-valid:focus,
@@ -101,7 +101,7 @@
 .login-card-body .input-group .form-control.is-valid ~ .input-group-append .input-group-text,
 .register-card-body .input-group .form-control.is-valid ~ .input-group-prepend .input-group-text,
 .register-card-body .input-group .form-control.is-valid ~ .input-group-append .input-group-text {
-  border-color: #28a745;
+  border-color: #2E9B47;
 }
 
 .login-card-body .input-group .form-control.is-invalid:focus,
@@ -111,7 +111,7 @@
 
 .login-card-body .input-group .form-control.is-invalid ~ .input-group-append .input-group-text,
 .register-card-body .input-group .form-control.is-invalid ~ .input-group-append .input-group-text {
-  border-color: #dc3545;
+  border-color: #DC2626;
 }
 
 .login-card-body .input-group .input-group-text,
@@ -120,7 +120,7 @@
   border-bottom-right-radius: 0.25rem;
   border-left: 0;
   border-top-right-radius: 0.25rem;
-  color: #777;
+  color: #6B7280;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -137,12 +137,12 @@
 
 .dark-mode .login-card-body,
 .dark-mode .register-card-body {
-  background-color: #343a40;
-  border-color: #6c757d;
-  color: #fff;
+  background-color: #0C2461;
+  border-color: #1E4E8C;
+  color: #FFFFFF;
 }
 
 .dark-mode .login-logo a,
 .dark-mode .register-logo a {
-  color: #fff;
+  color: #FFFFFF;
 }

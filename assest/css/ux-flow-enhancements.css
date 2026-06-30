@@ -1,3 +1,20 @@
+/* Paleta SmartBerry corporativa basada en el logo */
+:root {
+  --smart-primary: #0C2461;
+  --smart-primary-600: #1E4E8C;
+  --smart-secondary: #D7264F;
+  --smart-secondary-600: #F0456C;
+  --smart-success: #2E9B47;
+  --smart-info: #2B6CB0;
+  --smart-warning: #F59E0B;
+  --smart-danger: #DC2626;
+  --smart-surface: #FFFFFF;
+  --smart-bg: #F8FAFC;
+  --smart-text: #1F2937;
+  --smart-muted: #6B7280;
+  --smart-border: #E5E7EB;
+}
+
 .ux-menu-search-item {
   padding: 10px 12px 6px;
 }
@@ -25,7 +42,7 @@
   font-size: 10px;
   letter-spacing: 0.14em;
   font-weight: 700;
-  color: #8b99ab;
+  color: #6B7280;
   padding: 14px 14px 7px !important;
   text-transform: uppercase;
 }
@@ -44,7 +61,7 @@
   min-height: 37px;
   padding: 8px 12px;
   font-size: 13px;
-  color: #4f657d;
+  color: #1F2937;
 }
 
 .main-sidebar .sidebar-menu > li.treeview > a > span:first-of-type {
@@ -53,14 +70,14 @@
 
 .main-sidebar .sidebar-menu > li > a:hover,
 .main-sidebar .treeview-menu > li > a:hover {
-  background: rgba(47, 111, 176, 0.1);
-  color: #2d4f74;
+  background: rgba(12, 36, 97, 0.10);
+  color: #0C2461;
 }
 
 .main-sidebar .treeview-menu {
   margin: 4px 0 8px 18px;
   padding-left: 9px;
-  border-left: 1px solid rgba(201, 214, 223, 0.14);
+  border-left: 1px solid rgba(229, 231, 235, 0.50);
 }
 
 .main-sidebar .treeview-menu > li > a {
@@ -68,22 +85,22 @@
   border-radius: 8px;
   padding: 6px 10px 6px 11px;
   font-size: 12.5px;
-  color: #5d7388;
+  color: #4A5568;
   font-weight: 400;
 }
 
 .main-sidebar .sidebar-menu li.active > a {
-  background: rgba(47, 111, 176, 0.12);
-  color: #284b70;
+  background: rgba(12, 36, 97, 0.12);
+  color: #0C2461;
   box-shadow: none;
 }
 
 .main-sidebar .sidebar-menu li > a.ux-link-active {
   position: relative;
-  background: rgba(47, 111, 176, 0.16);
-  color: #1f466f;
+  background: rgba(12, 36, 97, 0.16);
+  color: #0C2461;
   font-weight: 600;
-  box-shadow: inset 3px 0 0 #2f6fb0, 0 6px 16px rgba(8, 20, 36, 0.08);
+  box-shadow: inset 3px 0 0 #D7264F, 0 6px 16px rgba(12, 36, 97, 0.08);
 }
 
 .main-sidebar .sidebar-menu li > a.ux-link-active::after {
@@ -94,14 +111,14 @@
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: #2f6fb0;
+  background: #D7264F;
   transform: translateY(-50%);
 }
 
 .main-sidebar .treeview-menu > li.active > a,
 .main-sidebar .treeview-menu > li > a.ux-link-active {
-  background: rgba(47, 111, 176, 0.14);
-  color: #1f4f82;
+  background: rgba(12, 36, 97, 0.14);
+  color: #0C2461;
   font-weight: 600;
 }
 
@@ -149,7 +166,7 @@ a.btn:focus-visible,
 input.btn:focus,
 input.btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 0.18rem rgba(77, 163, 255, 0.22);
+  box-shadow: 0 0 0 0.18rem rgba(12, 36, 97, 0.22);
 }
 
 .btn:disabled,
@@ -167,8 +184,8 @@ input.btn:disabled {
 button.btn[name*="GUARDAR" i],
 input.btn[name*="GUARDAR" i],
 input.btn[value*="GUARDAR" i] {
-  background-color: #28a745;
-  border-color: #23933d;
+  background-color: #D7264F;
+  border-color: #B91C45;
   color: #ffffff;
 }
 
@@ -182,8 +199,8 @@ input.btn[name*="CANCELAR" i],
 input.btn[name*="CERRAR" i],
 input.btn[value*="CANCELAR" i],
 input.btn[value*="CERRAR" i] {
-  background-color: #ffc107;
-  border-color: #e3ac06;
+  background-color: #F59E0B;
+  border-color: #D97706;
   color: #1f1f1f;
 }
 
@@ -195,8 +212,8 @@ input.btn[name*="INFORME" i],
 input.btn[name*="REPORTE" i],
 input.btn[value*="INFORME" i],
 input.btn[value*="REPORTE" i] {
-  background-color: #0d6efd;
-  border-color: #0a5cd6;
+  background-color: #0C2461;
+  border-color: #1E4E8C;
   color: #ffffff;
 }
 
@@ -204,8 +221,8 @@ input.btn[value*="REPORTE" i] {
 button.btn[name*="TARJA" i],
 input.btn[name*="TARJA" i],
 input.btn[value*="TARJA" i] {
-  background-color: #5bc0de;
-  border-color: #44adcc;
+  background-color: #2B6CB0;
+  border-color: #1E4E8C;
   color: #ffffff;
 }
 
@@ -224,7 +241,7 @@ input[type="search"],
 input[type="tel"],
 input[type="url"] {
   border-radius: 8px;
-  border: 1px solid #d6dde5;
+  border: 1px solid #E5E7EB;
   padding: 8px 10px;
   min-height: 38px;
   background-color: #fff;
@@ -245,6 +262,6 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="url"]:focus {
   outline: none;
-  border-color: #4da3ff;
-  box-shadow: 0 0 0 0.18rem rgba(77, 163, 255, 0.2);
+  border-color: #0C2461;
+  box-shadow: 0 0 0 0.18rem rgba(12, 36, 97, 0.20);
 }

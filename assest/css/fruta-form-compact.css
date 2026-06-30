@@ -2,16 +2,16 @@
    Estilo transversal para formularios activos del módulo Fruta.
    Se limita a vistas con body.sistemRR para evitar afectar otros módulos. */
 body.sistemRR {
-    --fruta-bg:#f4f7fb;
+    --fruta-bg:#F8FAFC;
     --fruta-card:#ffffff;
-    --fruta-line:#dbe7df;
-    --fruta-primary:#28a745;
-    --fruta-primary-dark:#1f7a35;
-    --fruta-soft:#f8fbff;
-    --fruta-text:#111827;
-    --fruta-muted:#64748b;
-    --fruta-input:#cbd5e1;
-    --fruta-danger:#b91c1c;
+    --fruta-line:#E5E7EB;
+    --fruta-primary:#0C2461;
+    --fruta-primary-dark:#1E4E8C;
+    --fruta-soft:#F8FAFC;
+    --fruta-text:#1F2937;
+    --fruta-muted:#6B7280;
+    --fruta-input:#E5E7EB;
+    --fruta-danger:#DC2626;
 }
 
 body.sistemRR .content {
@@ -75,15 +75,15 @@ body.sistemRR .box-body,
 body.sistemRR .card-body,
 body.sistemRR .modal-body {
     padding:8px;
-    background:#fafbfd;
+    background:#F8FAFC;
 }
 
 body.sistemRR .box-body > .row,
 body.sistemRR .modal-body > .row,
 body.sistemRR .form > .row {
     background:#fff;
-    border:1px solid rgba(40,167,69,.22);
-    border-left:3px solid rgba(40,167,69,.68);
+    border:1px solid rgba(12,36,97,.18);
+    border-left:3px solid rgba(215,38,79,.68);
     border-radius:7px;
     padding:7px 4px 5px;
     margin:0 0 6px;
@@ -94,14 +94,14 @@ body.sistemRR .form > .row {
 body.sistemRR .box-body > .row:hover,
 body.sistemRR .modal-body > .row:hover,
 body.sistemRR .form > .row:hover {
-    border-color:rgba(40,167,69,.36);
-    border-left-color:rgba(40,167,69,.95);
+    border-color:rgba(12,36,97,.28);
+    border-left-color:rgba(215,38,79,.95);
     box-shadow:0 4px 12px rgba(15,23,42,.055);
 }
 
 body.sistemRR .vextra-section {
-    border:1px solid rgba(40,167,69,.28);
-    border-left:3px solid rgba(40,167,69,.72);
+    border:1px solid rgba(12,36,97,.24);
+    border-left:3px solid rgba(215,38,79,.72);
 }
 
 body.sistemRR .row {
@@ -124,7 +124,7 @@ body.sistemRR .input-group-text {
     font-size:12px;
     font-weight:700;
     margin-bottom:3px;
-    color:#374151;
+    color:#1F2937;
     line-height:1.2;
 }
 
@@ -158,15 +158,15 @@ body.sistemRR textarea.form-control {
 body.sistemRR .form-control:focus,
 body.sistemRR .select2-container--default.select2-container--focus .select2-selection--single {
     border-color:var(--fruta-primary);
-    box-shadow:0 0 0 3px rgba(40,167,69,.12);
+    box-shadow:0 0 0 3px rgba(12,36,97,.12);
 }
 
 body.sistemRR .form-control[disabled],
 body.sistemRR .form-control:disabled,
 body.sistemRR input[readonly] {
     background:#f8fafc !important;
-    color:#64748b;
-    border-color:#e2e8f0;
+    color:#6B7280;
+    border-color:#E5E7EB;
 }
 
 body.sistemRR .select2-container--default .select2-selection--single {
@@ -194,16 +194,53 @@ body.sistemRR .btn {
     font-weight:700;
 }
 
-body.sistemRR .btn-primary,
-body.sistemRR .btn-success {
+body.sistemRR .btn-primary {
     background:var(--fruta-primary);
     border-color:var(--fruta-primary);
 }
 
-body.sistemRR .btn-primary:hover,
-body.sistemRR .btn-success:hover {
+body.sistemRR .btn-primary:hover {
     background:var(--fruta-primary-dark);
     border-color:var(--fruta-primary-dark);
+}
+
+body.sistemRR .btn-success {
+    background:#2E9B47;
+    border-color:#2E9B47;
+}
+
+body.sistemRR .btn-success:hover {
+    background:#247A38;
+    border-color:#247A38;
+}
+
+body.sistemRR .btn-guardar,
+body.sistemRR button.btn[name*="GUARDAR" i],
+body.sistemRR button.btn[name*="REGISTRAR" i],
+body.sistemRR button.btn[name*="CREAR" i],
+body.sistemRR input.btn[name*="GUARDAR" i],
+body.sistemRR input.btn[name*="REGISTRAR" i],
+body.sistemRR input.btn[name*="CREAR" i],
+body.sistemRR input.btn[value*="GUARDAR" i],
+body.sistemRR input.btn[value*="REGISTRAR" i],
+body.sistemRR input.btn[value*="CREAR" i] {
+    background:#D7264F;
+    border-color:#B91C45;
+    color:#FFFFFF;
+}
+
+body.sistemRR .btn-guardar:hover,
+body.sistemRR button.btn[name*="GUARDAR" i]:hover,
+body.sistemRR button.btn[name*="REGISTRAR" i]:hover,
+body.sistemRR button.btn[name*="CREAR" i]:hover,
+body.sistemRR input.btn[name*="GUARDAR" i]:hover,
+body.sistemRR input.btn[name*="REGISTRAR" i]:hover,
+body.sistemRR input.btn[name*="CREAR" i]:hover,
+body.sistemRR input.btn[value*="GUARDAR" i]:hover,
+body.sistemRR input.btn[value*="REGISTRAR" i]:hover,
+body.sistemRR input.btn[value*="CREAR" i]:hover {
+    background:#F0456C;
+    border-color:#D7264F;
 }
 
 body.sistemRR .btn-block,
@@ -251,7 +288,7 @@ body.sistemRR .btn-toolbar .btn-group {
 
 body.sistemRR .card-header:not(.bg-info):not(.bg-success):not(.bg-primary) {
     padding:8px 10px;
-    background:#fafbfd;
+    background:#F8FAFC;
     border-bottom:1px solid var(--fruta-line);
 }
 
@@ -266,7 +303,7 @@ body.sistemRR #detalle thead th {
     position:sticky;
     top:0;
     z-index:2;
-    background:#f3f6f9;
+    background:#F8FAFC;
     border-bottom:1px solid var(--fruta-line);
     white-space:nowrap;
 }

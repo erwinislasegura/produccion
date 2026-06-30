@@ -269,7 +269,7 @@
             position: relative;
             min-height: 100vh;
             overflow: hidden;
-            background: #0b1f45;
+            background: #0b1f45 url('assest/img/abeja.jpg') center/cover no-repeat;
         }
 
         .slider-bg {
@@ -465,7 +465,7 @@
 
                     <div class="button-grid">
 
-                        <a href="../fruta" class="system-btn">
+                        <a href="fruta/vista/iniciarSession.php" class="system-btn">
                             <span class="icon-box">
                                 <span class="material-icons-round">local_florist</span>
                             </span>
@@ -478,7 +478,7 @@
                             <span class="material-icons-round arrow-icon">arrow_forward</span>
                         </a>
 
-                        <a href="../material" class="system-btn">
+                        <a href="material/vista/iniciarSession.php" class="system-btn">
                             <span class="icon-box">
                                 <span class="material-icons-round">inventory_2</span>
                             </span>
@@ -491,7 +491,7 @@
                             <span class="material-icons-round arrow-icon">arrow_forward</span>
                         </a>
 
-                        <a href="../exportadora" class="system-btn">
+                        <a href="exportadora/vista/iniciarSession.php" class="system-btn">
                             <span class="icon-box">
                                 <span class="material-icons-round">flight_takeoff</span>
                             </span>
@@ -504,7 +504,7 @@
                             <span class="material-icons-round arrow-icon">arrow_forward</span>
                         </a>
 
-                        <a href="../estadistica" class="system-btn">
+                        <a href="estadistica/vista/iniciarSession.php" class="system-btn">
                             <span class="icon-box">
                                 <span class="material-icons-round">bar_chart</span>
                             </span>
@@ -517,7 +517,7 @@
                             <span class="material-icons-round arrow-icon">arrow_forward</span>
                         </a>
 
-                        <a href="../calidad" class="system-btn">
+                        <a href="calidad/vista/iniciarSession.php" class="system-btn">
                             <span class="icon-box">
                                 <span class="material-icons-round">verified</span>
                             </span>
@@ -559,9 +559,9 @@
 
         <section class="right-panel">
             <div class="slider-bg">
-                <div class="slide active" style="background-image:url('http://190.13.179.171:18069/smartberries%20-23-24/assest/img/abeja.jpg')"></div>
-                <div class="slide" style="background-image:url('http://190.13.179.171:18069/smartberries%20-23-24/assest/img/arandano.jpg')"></div>
-                <div class="slide" style="background-image:url('http://190.13.179.171:18069/smartberries%20-23-24/assest/img/esparragos.jpg')"></div>
+                <div class="slide active" style="background-image:url('assest/img/abeja.jpg')"></div>
+                <div class="slide" style="background-image:url('assest/img/arandano.jpg')"></div>
+                <div class="slide" style="background-image:url('assest/img/esparragos.jpg')"></div>
             </div>
 
             <div class="image-cover"></div>

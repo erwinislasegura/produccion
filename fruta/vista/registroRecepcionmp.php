@@ -932,7 +932,6 @@ if (isset($_POST)) {
         .sistemRR .box-body {
             padding: 8px;
             background: #fafbfd;
-            counter-reset: recepcion-section;
         }
 
         .sistemRR .vextra-section {
@@ -955,22 +954,6 @@ if (isset($_POST)) {
             font-size: 0;
         }
 
-        .sistemRR .compact-section-title::before {
-            counter-increment: recepcion-section;
-            content: counter(recepcion-section);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 21px;
-            height: 21px;
-            flex: 0 0 21px;
-            border-radius: 50%;
-            background: var(--section-accent);
-            color: var(--primary-dark);
-            font-size: 12px;
-            font-weight: 700;
-        }
-
         .sistemRR .compact-section-title .title-main {
             font-size: 15px;
             font-weight: 700;
@@ -981,6 +964,31 @@ if (isset($_POST)) {
         .sistemRR .compact-section-title .title-sub {
             font-size: 12px;
             color: var(--muted);
+        }
+
+
+        .sistemRR .origen-entidad {
+            order: 1;
+        }
+
+        .sistemRR .origen-accion {
+            order: 2;
+        }
+
+        .sistemRR .origen-codigo {
+            order: 2;
+        }
+
+        .sistemRR .origen-codigo-planta {
+            order: 3;
+        }
+
+        .sistemRR .origen-nota {
+            order: 3;
+        }
+
+        .sistemRR .origen-nota-planta {
+            order: 4;
         }
 
         .sistemRR .form-group {
@@ -2007,14 +2015,14 @@ if (isset($_POST)) {
                                             </div>
                                         <?php } ?>
                                         <?php if ($TRECEPCION == "1") { ?>
-                                            <div class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 col-xs-6">
+                                            <div class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 col-xs-6 origen-codigo">
                                                 <div class="form-group">
                                                     <label>CSG</label>
                                                     <input type="hidden" class="form-control" placeholder="CSG" id="CSG" name="CSG" value="<?php echo $CSG; ?>" />
                                                     <input type="text" class="form-control" placeholder="CSG" id="CSGV" name="CSGV" value="<?php echo $CSG; ?>" disabled />
                                                 </div>
                                             </div>
-                                            <div class="col-xxl-7 col-xl-8 col-lg-6 col-md-12 col-sm-12 col-12 col-xs-12">
+                                            <div class="col-xxl-7 col-xl-8 col-lg-6 col-md-12 col-sm-12 col-12 col-xs-12 origen-nota">
                                                 <div class="form-group">
                                                     <label>Observaciones </label>
                                                     <input type="hidden" class="form-control" placeholder="Observaciones" id="OBSERVACIONE" name="OBSERVACIONE" value="<?php echo $OBSERVACION; ?>" />
@@ -2022,7 +2030,7 @@ if (isset($_POST)) {
                                                     <label id="val_observacion" class="validacion"> </label>
                                                 </div>
                                             </div>
-                                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12 col-xs-12">
+                                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12 col-xs-12 origen-entidad">
                                                 <div class="form-group">
                                                     <label>Productor</label>
                                                     <input type="hidden" class="form-control" placeholder="PLANTA2" id="PLANTA2E" name="PLANTA2E" value="<?php echo $PLANTA2; ?>" />
@@ -2051,14 +2059,14 @@ if (isset($_POST)) {
                                             </div>
                                         <?php } ?>
                                         <?php if ($TRECEPCION == "2") { ?>
-                                            <div class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 col-xs-6">
+                                            <div class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 col-xs-6 origen-codigo-planta">
                                                 <div class="form-group">
                                                     <label>CSP</label>
                                                     <input type="hidden" class="form-control" placeholder="CSG" id="CSG" name="CSG" value="<?php echo $CSG; ?>" />
                                                     <input type="text" class="form-control" placeholder="CSG" id="CSGV" name="CSGV" value="<?php echo $CSG; ?>" disabled />
                                                 </div>
                                             </div>
-                                            <div class="col-xxl-6 col-xl-8 col-lg-6 col-md-12 col-sm-12 col-12 col-xs-12">
+                                            <div class="col-xxl-6 col-xl-8 col-lg-6 col-md-12 col-sm-12 col-12 col-xs-12 origen-nota-planta">
                                                 <div class="form-group">
                                                     <label>Observaciones </label>
                                                     <input type="hidden" class="form-control" placeholder="Observaciones" id="OBSERVACIONE" name="OBSERVACIONE" value="<?php echo $OBSERVACION; ?>" />
@@ -2066,7 +2074,7 @@ if (isset($_POST)) {
                                                     <label id="val_observacion" class="validacion"> </label>
                                                 </div>
                                             </div>
-                                            <div class="col-xxl-3 col-xl-5 col-lg-9 col-md-9 col-sm-9 col-9 col-xs-9">
+                                            <div class="col-xxl-3 col-xl-5 col-lg-9 col-md-9 col-sm-9 col-9 col-xs-9 origen-entidad">
                                                 <div class="form-group">
                                                     <label>Planta Origen</label>
                                                     <input type="hidden" class="form-control" placeholder="PLANTA2E" id="PLANTA2E" name="PLANTA2E" value="<?php echo $PLANTA2; ?>" />
@@ -2085,7 +2093,7 @@ if (isset($_POST)) {
                                                     <label id="val_planta2" class="validacion"> </label>
                                                 </div>
                                             </div>
-                                            <div class="col-xxl-1 col-xl-1 col-lg-3 col-md-3 col-sm-3 col-3 col-xs-3">
+                                            <div class="col-xxl-1 col-xl-1 col-lg-3 col-md-3 col-sm-3 col-3 col-xs-3 origen-accion">
                                                 <div class="form-group btn-inline-add">
                                                     <button type="button" class="btn btn-success btn-block" data-toggle="tooltip" title="Agregar Planta Externa" <?php echo $DISABLED; ?> <?php echo $DISABLED3; ?> <?php echo $DISABLEDFOLIO; ?> id="defecto" name="pop" Onclick="abrirVentana('registroPopPlanta2.php' ); ">
                                                         <i class="glyphicon glyphicon-plus"></i>
@@ -2094,14 +2102,14 @@ if (isset($_POST)) {
                                             </div>
                                         <?php } ?>
                                         <?php if ($TRECEPCION == "3") { ?>
-                                            <div class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 col-xs-6">
+                                            <div class="col-xxl-2 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6 col-xs-6 origen-codigo">
                                                 <div class="form-group">
                                                     <label>CSG</label>
                                                     <input type="hidden" class="form-control" placeholder="CSG" id="CSG" name="CSG" value="<?php echo $CSG; ?>" />
                                                     <input type="text" class="form-control" placeholder="CSG" id="CSGV" name="CSGV" value="<?php echo $CSG; ?>" disabled />
                                                 </div>
                                             </div>
-                                            <div class="col-xxl-7 col-xl-8 col-lg-6 col-md-12 col-sm-12 col-12 col-xs-12">
+                                            <div class="col-xxl-7 col-xl-8 col-lg-6 col-md-12 col-sm-12 col-12 col-xs-12 origen-nota">
                                                 <div class="form-group">
                                                     <label>Observaciones </label>
                                                     <input type="hidden" class="form-control" placeholder="Observaciones" id="OBSERVACIONE" name="OBSERVACIONE" value="<?php echo $OBSERVACION; ?>" />
@@ -2109,7 +2117,7 @@ if (isset($_POST)) {
                                                     <label id="val_observacion" class="validacion"> </label>
                                                 </div>
                                             </div>
-                                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12 col-xs-12">
+                                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12 col-xs-12 origen-entidad">
                                                 <div class="form-group">
                                                     <label>Productor</label>
                                                     <input type="hidden" class="form-control" placeholder="PLANTA2" id="PLANTA2E" name="PLANTA2E" value="<?php echo $PLANTA2; ?>" />

@@ -97,6 +97,8 @@ $ARRAYTEMPORADA = $TEMPORADA_ADO->listarTemporadaCBX();
       .btn-group{flex-direction:column}
     }
   </style>
+  <link rel="stylesheet" href="../../assest/css/fruta-form-compact.css">
+
 </head>
 <body class="sistemRR">
   <div class="container">

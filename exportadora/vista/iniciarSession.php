@@ -87,6 +87,8 @@ function h($string) {
        .right-panel{min-height:300px}
     }
   </style>
+  <link rel="stylesheet" href="../../assest/css/fruta-form-compact.css">
+
 </head>
 <body class="sistemRR">
   <div class="container">

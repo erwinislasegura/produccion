@@ -103,6 +103,8 @@ if (!isset($_SESSION['login_attempts'])) {
        }
     }
   </style>
+  <link rel="stylesheet" href="../../assest/css/fruta-form-compact.css">
+
 </head>
 <body class="sistemRR">
   <div class="container">

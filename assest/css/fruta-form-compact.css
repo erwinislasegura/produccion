@@ -1,6 +1,6 @@
-/* Formulario Fruta ERP Compacto
-   Estilo transversal para formularios activos del módulo Fruta.
-   Se limita a vistas con body.sistemRR para evitar afectar otros módulos. */
+/* Formulario ERP Compacto
+   Estilo transversal para todos los formularios cargados desde urlHead.php.
+   El alcance principal es body.sistemRR, clase usada por los módulos operativos. */
 body.sistemRR {
     --fruta-bg:#F8FAFC;
     --fruta-card:#ffffff;
@@ -17,6 +17,67 @@ body.sistemRR {
 body.sistemRR .content {
     background:var(--fruta-bg);
     padding-top:8px;
+}
+
+body.sistemRR .recepcion-shell,
+body.sistemRR .content > form,
+body.sistemRR .content > .form,
+body.sistemRR .content > .box,
+body.sistemRR .content > .card {
+    max-width:1540px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+body.sistemRR form {
+    width:100%;
+}
+
+body.sistemRR .form-status-strip {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:6px;
+    margin-top:7px;
+}
+
+body.sistemRR .status-chip {
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    padding:3px 9px;
+    border-radius:999px;
+    background:#F1F5F9;
+    color:#475569;
+    font-size:11px;
+    font-weight:700;
+    line-height:1.2;
+}
+
+body.sistemRR .status-chip.status-open {
+    background:#EAF7EE;
+    color:#1F7A39;
+}
+
+body.sistemRR .status-chip.status-closed {
+    background:#FFF1F2;
+    color:#B91C1C;
+}
+
+body.sistemRR .field-hint {
+    display:block;
+    margin-top:2px;
+    color:var(--fruta-muted);
+    font-size:10px;
+    line-height:1.15;
+}
+
+body.sistemRR .required-label::after,
+body.sistemRR label.required::after,
+body.sistemRR label[data-required="true"]::after {
+    content:" *";
+    color:var(--fruta-danger);
+    font-weight:700;
 }
 
 body.sistemRR .content-header {
@@ -79,8 +140,10 @@ body.sistemRR .modal-body {
 }
 
 body.sistemRR .box-body > .row,
+body.sistemRR .card-body > .row,
 body.sistemRR .modal-body > .row,
-body.sistemRR .form > .row {
+body.sistemRR .form > .row,
+body.sistemRR form > .row {
     background:#fff;
     border:1px solid rgba(12,36,97,.18);
     border-left:3px solid rgba(215,38,79,.68);
@@ -92,16 +155,51 @@ body.sistemRR .form > .row {
 }
 
 body.sistemRR .box-body > .row:hover,
+body.sistemRR .card-body > .row:hover,
 body.sistemRR .modal-body > .row:hover,
-body.sistemRR .form > .row:hover {
+body.sistemRR .form > .row:hover,
+body.sistemRR form > .row:hover {
     border-color:rgba(12,36,97,.28);
     border-left-color:rgba(215,38,79,.95);
     box-shadow:0 4px 12px rgba(15,23,42,.055);
 }
 
 body.sistemRR .vextra-section {
+    background:#fff;
     border:1px solid rgba(12,36,97,.24);
     border-left:3px solid rgba(215,38,79,.72);
+    border-radius:7px;
+    padding:7px 9px 5px;
+    margin-bottom:6px;
+    box-shadow:0 1px 3px rgba(15,23,42,.035);
+}
+
+body.sistemRR .compact-section-title {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    margin:-7px -9px 6px;
+    padding:7px 9px 6px;
+    border-bottom:1px solid var(--fruta-line);
+    border-radius:6px 6px 0 0;
+    background:linear-gradient(90deg, #F8FAFC 0%, #FFFFFF 72%);
+}
+
+body.sistemRR .compact-section-title .title-main {
+    font-size:15px;
+    font-weight:700;
+    color:#111827;
+    margin-right:auto;
+}
+
+body.sistemRR .compact-section-title .title-sub {
+    padding:2px 7px;
+    border-radius:999px;
+    background:#F1F5F9;
+    color:var(--fruta-muted);
+    font-size:12px;
+    white-space:nowrap;
 }
 
 body.sistemRR .row {
@@ -336,4 +434,23 @@ body.sistemRR #detalle td {
         width:100%;
         margin-bottom:6px;
     }
+}
+
+/* Entradas usadas en formularios de login/selección que no cargan Bootstrap. */
+body.sistemRR .form-input,
+body.sistemRR select.form-control,
+body.sistemRR input.form-control {
+    border:1px solid var(--fruta-input);
+    border-radius:8px;
+    font-size:14px;
+    box-shadow:none;
+    transition:border-color .18s ease, box-shadow .18s ease;
+}
+
+body.sistemRR .form-input:focus,
+body.sistemRR select.form-control:focus,
+body.sistemRR input.form-control:focus {
+    border-color:var(--fruta-primary);
+    box-shadow:0 0 0 3px rgba(12,36,97,.12);
+    outline:none;
 }

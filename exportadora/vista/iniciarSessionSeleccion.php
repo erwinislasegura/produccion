@@ -29,156 +29,144 @@ if (isset($_SESSION["ID_EMPRESA"])) {
     $EMPRESA = $_SESSION["ID_EMPRESA"];
 }
 if (isset($_SESSION["ID_TEMPORADA"])) {
-    $TEMPORADA = $_SESSION["ID_TEMPORADA"];   
-} 
+    $TEMPORADA = $_SESSION["ID_TEMPORADA"];
+}
+function h($string) {
+    return htmlspecialchars((string)$string, ENT_QUOTES, 'UTF-8');
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selección de Parámetros - SmartBerry One</title>
-  <link rel="icon" href="../../assest/img/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="../../assest/js/sweetalert2@11.js"></script>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-    body,html{height:100%}
-    .container{display:flex;min-height:100vh}
-    .left-panel{flex:1;max-width:450px;background:#fff;padding:40px;display:flex;flex-direction:column;justify-content:center}
-    .logo{text-align:center;margin-bottom:20px}
-    .logo img{max-width:180px}
-    .logo p{margin-top:5px;color:#666;font-size:13px}
-    h2{text-align:center;margin-bottom:20px;color:#1a2b4c;font-weight:700;font-size:18px}
-    .card{border:1px solid #e0e6ef;border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
-    label{font-size:14px;color:#1a2b4c;font-weight:600;margin-bottom:8px;display:block}
-    select.form-control{width:100%;padding:12px;border:1px solid #ccd4e0;border-radius:8px;font-size:14px;margin-bottom:10px}
-    .validacion{font-size:12px;color:#d32f2f;margin-bottom:10px;display:block}
-    .btn{width:100%;padding:14px;border:none;border-radius:8px;font-weight:600;cursor:pointer;margin-top:10px}
-    .btn-primary{background:#007bff;color:#fff}
-    .btn-primary:hover{background:#0069d9}
-    .btn-danger{background:#dc3545;color:#fff}
-    .btn-danger:hover{background:#b52a37}
-    .right-panel{flex:2;position:relative;overflow:hidden}
-    .slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s}
-    .slide.active{opacity:1}
-    @media(max-width:768px){
-       .container{flex-direction:column}
-       .left-panel{max-width:none;width:100%}
-       .right-panel{min-height:250px}
-    }
-  </style>
-  <link rel="stylesheet" href="../../assest/css/fruta-form-compact.css">
-
-  <script>
-    function validacion() {
-        var retorno = 1;
-        EMPRESA = document.getElementById("EMPRESA").selectedIndex;
-        TEMPORADA = document.getElementById("TEMPORADA").selectedIndex;
-        document.getElementById('val_select_empresa').innerHTML = "";
-        document.getElementById('val_select_temporada').innerHTML = "";
-
-        if (EMPRESA == null || EMPRESA == 0) {
-            document.form_reg_dato.EMPRESA.focus();
-            document.form_reg_dato.EMPRESA.style.borderColor = "#FF0000";
-            document.getElementById('val_select_empresa').innerHTML = "Debe seleccionar una Empresa.";
-            retorno = 1;
-        } else {
-            retorno = 0;
-            document.form_reg_dato.EMPRESA.style.borderColor = "#4CAF50";
+    <meta charset="UTF-8">
+    <title>Selección de Parámetros - SmartBerry ONE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assest/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <script src="../../assest/js/sweetalert2@11.js"></script>
+    <link rel="stylesheet" href="../../assest/css/fruta-form-compact.css">
+    <style>
+        :root {
+            --azul: #001b5d;
+            --azul-2: #082768;
+            --rojo: #d81046;
+            --verde: #238b3b;
+            --texto: #1f2a44;
+            --muted: #68758a;
+            --muted-2: #8b96a8;
+            --border: #e2e8f0;
+            --border-2: #d8e1ec;
+            --bg: #f6f8fb;
+            --white: #ffffff;
+            --soft-blue: #f3f6fb;
+            --soft-green: #f4faf6;
+            --shadow-card: 0 18px 42px rgba(0, 27, 93, 0.08);
+            --shadow-soft: 0 10px 24px rgba(0, 27, 93, 0.06);
         }
-        if (TEMPORADA == null || TEMPORADA == 0) {
-            document.form_reg_dato.TEMPORADA.focus();
-            document.form_reg_dato.TEMPORADA.style.borderColor = "#FF0000";
-            document.getElementById('val_select_temporada').innerHTML = "Debe seleccionar una Temporada.";
-            retorno = 1;
-        } else {
-            retorno = 0;
-            document.form_reg_dato.TEMPORADA.style.borderColor = "#4CAF50";
-        }
-        if(retorno==1){ return false; }
-    }
-  </script>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; min-height: 100%; font-family: 'Montserrat', Arial, sans-serif; background: var(--bg); color: var(--texto); }
+        body { overflow-x: hidden; }
+        .page { min-height: 100vh; display: grid; grid-template-columns: 460px 1fr; background: var(--bg); }
+        .left-panel { background: var(--white); border-right: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 34px 36px; position: relative; z-index: 2; }
+        .left-content { width: 100%; max-width: 372px; }
+        .brand { margin-bottom: 22px; }
+        .brand img { width: 100%; max-width: 280px; height: auto; display: block; margin-bottom: 18px; }
+        .module-badge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 11px; border-radius: 999px; background: var(--soft-green); border: 1px solid #dcefe2; color: var(--verde); font-size: 0.66rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 13px; }
+        .module-badge .material-icons-round { font-size: 15px; }
+        .title { color: var(--azul); font-size: 1.18rem; line-height: 1.35; font-weight: 600; letter-spacing: -0.025em; margin: 0; }
+        .subtitle { margin-top: 8px; color: var(--muted); font-size: 0.76rem; line-height: 1.6; font-weight: 400; }
+        .site-link { margin-top: 12px; display: inline-flex; align-items: center; gap: 7px; color: var(--azul); font-size: 0.74rem; font-weight: 500; text-decoration: none; }
+        .site-link:hover { color: var(--rojo); }
+        .site-link .material-icons-round { font-size: 16px; color: var(--rojo); }
+        .login-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow-card); padding: 18px; }
+        .card-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 15px; }
+        .card-title { color: var(--azul); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+        .secure-pill { display: inline-flex; align-items: center; gap: 5px; padding: 6px 9px; border-radius: 999px; background: #f8fafc; border: 1px solid var(--border); color: var(--muted); font-size: 0.65rem; font-weight: 500; white-space: nowrap; }
+        .secure-pill .material-icons-round { font-size: 14px; color: var(--verde); }
+        .form-grid, .form-group { display: grid; }
+        .form-grid { gap: 10px; }
+        .form-group { gap: 5px; }
+        .form-label { color: var(--azul); font-size: 0.67rem; font-weight: 600; letter-spacing: 0.035em; text-transform: uppercase; }
+        .form-input { width: 100%; height: 40px; border: 1px solid var(--border); border-radius: 10px; background: var(--white); color: var(--texto); font-family: inherit; font-size: 0.76rem; font-weight: 400; outline: none; padding: 0 12px; transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease; }
+        .form-input::placeholder { color: #a0aabc; }
+        .form-input:focus { border-color: #b9d8c2; box-shadow: 0 0 0 3px rgba(35, 139, 59, 0.08); }
+        select.form-input { appearance: none; padding-right: 36px; background-image: linear-gradient(45deg, transparent 50%, #9aa6b8 50%), linear-gradient(135deg, #9aa6b8 50%, transparent 50%); background-position: calc(100% - 17px) 17px, calc(100% - 12px) 17px; background-size: 5px 5px; background-repeat: no-repeat; }
+        .option-box { margin-top: 2px; padding: 11px 12px; border: 1px solid var(--border); border-radius: 10px; background: #fbfcfd; display: flex; gap: 9px; align-items: flex-start; }
+        .option-box input { width: 15px; height: 15px; margin-top: 1px; accent-color: var(--verde); flex: 0 0 auto; }
+        .option-box label { color: var(--muted); font-size: 0.69rem; line-height: 1.45; font-weight: 400; cursor: pointer; }
+        .security-note { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 3px 0 0; color: var(--verde); font-size: 0.69rem; font-weight: 500; }
+        .security-note .material-icons-round { font-size: 16px; }
+        .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+        .btn-row.single { grid-template-columns: 1fr; }
+        .btn { height: 41px; border-radius: 10px; border: 1px solid transparent; font-family: inherit; font-size: 0.76rem; font-weight: 600; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: all 0.18s ease; }
+        .btn:hover { transform: translateY(-1px); }
+        .btn-back { background: var(--white); color: var(--azul); border-color: var(--border); }
+        .btn-back:hover { border-color: var(--border-2); background: #f8fafc; box-shadow: var(--shadow-soft); }
+        .btn-login { background: var(--azul); color: var(--white); border-color: var(--azul); box-shadow: 0 10px 22px rgba(0, 27, 93, 0.14); }
+        .btn-login:hover { background: var(--azul-2); border-color: var(--azul-2); }
+        .btn-login:disabled { background: #c8ced8; border-color: #c8ced8; box-shadow: none; cursor: not-allowed; transform: none; }
+        .footer-text { margin-top: 16px; text-align: center; color: var(--muted-2); font-size: 0.66rem; line-height: 1.5; font-weight: 400; }
+        .login-alert { margin-bottom: 12px; padding: 10px 12px; border: 1px solid #ffe2a3; border-radius: 10px; background: #fff7df; color: #8a5a00; font-size: 0.7rem; font-weight: 600; }
+        .right-panel { position: relative; min-height: 100vh; overflow: hidden; background: #0b1f45; }
+        .slider-bg, .slide { position: absolute; inset: 0; }
+        .slide { background-size: cover; background-position: center; opacity: 0; transition: opacity 1.2s ease; }
+        .slide.active { opacity: 1; }
+        .image-cover { position: absolute; inset: 0; z-index: 1; background: rgba(0, 27, 93, 0.36); }
+        .right-info { position: absolute; left: 42px; bottom: 42px; z-index: 2; width: calc(100% - 84px); max-width: 520px; background: rgba(255,255,255,0.94); border: 1px solid rgba(255,255,255,0.7); border-radius: 16px; padding: 22px; box-shadow: 0 18px 42px rgba(0,0,0,0.14); }
+        .right-kicker { display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border-radius: 999px; background: var(--soft-blue); border: 1px solid var(--border); color: var(--azul); font-size: 0.66rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+        .right-kicker .material-icons-round { font-size: 15px; color: var(--verde); }
+        .right-info h2 { color: var(--azul); font-size: 1.08rem; line-height: 1.38; font-weight: 600; letter-spacing: -0.025em; }
+        .right-info p { margin-top: 9px; color: #5d697c; font-size: 0.78rem; line-height: 1.6; font-weight: 400; }
+        .right-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+        .right-tag { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 999px; background: #f8fafc; border: 1px solid #e5ebf2; color: var(--azul); font-size: 0.66rem; font-weight: 500; }
+        .right-tag .material-icons-round { font-size: 15px; color: var(--verde); }
+        @media (max-width: 980px) { .page { grid-template-columns: 1fr; } .left-panel { order: 2; border-right: none; padding: 30px 22px 38px; } .left-content { max-width: 420px; } .right-panel { order: 1; min-height: 300px; } .right-info { left: 22px; bottom: 22px; width: calc(100% - 44px); max-width: none; padding: 18px; } }
+        @media (max-width: 560px) { .right-panel { min-height: 235px; } .right-info { display: none; } .brand img { max-width: 252px; } .title { font-size: 1.08rem; } .subtitle { font-size: 0.74rem; } .login-card { padding: 16px; } .card-header { align-items: flex-start; flex-direction: column; gap: 8px; } .btn-row { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body class="sistemRR">
-  <div class="container">
-    <!-- Panel selección -->
-    <div class="left-panel">
-      <div class="logo">
-        <img src="../../assest/img/logo2.png" alt="SmartBerry One">
-        <p>smartberryone.cl</p>
-      </div>
-      <h2>Selección de Parámetros</h2>
-      <div class="card">
-        <form class="form-one-line" data-form-layout="oneline-1" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:0.65rem;padding:0.65rem 0;border-bottom:1px solid #3a3a3a;" method="post" name="form_reg_dato" id="form_reg_dato">
-          <label for="EMPRESA">Seleccionar Empresa</label>
-          <select class="form-control" id="EMPRESA" name="EMPRESA">
-              <option value="">-- Seleccione --</option>
-              <?php foreach ($ARRAYEMPRESA as $r) : ?>
-                  <option value="<?php echo $r['ID_EMPRESA']; ?>" <?php if ($EMPRESA == $r['ID_EMPRESA']) { echo "selected"; } ?>><?php echo $r['NOMBRE_EMPRESA']; ?></option>
-              <?php endforeach; ?>
-          </select>
-          <label id="val_select_empresa" class="validacion"><?php echo  $MENSAJE; ?></label>
+<main class="page">
+    <section class="left-panel">
+        <div class="left-content">
+            <header class="brand">
+                <img src="../../assest/img/logo2.png" alt="SmartBerry ONE">
+                <div class="module-badge"><span class="material-icons-round">flight_takeoff</span>Módulo exportadora</div>
+                <h1 class="title">Selección de parámetros</h1>
+                <p class="subtitle">Elige los datos de trabajo para continuar con tu operación.</p>
+                <a class="site-link" href="https://smartberryone.cl" target="_blank" rel="noopener noreferrer"><span class="material-icons-round">language</span>smartberryone.cl</a>
+            </header>
+            <section class="login-card">
+                <div class="card-header"><h2 class="card-title">Parámetros de sesión</h2><div class="secure-pill"><span class="material-icons-round">verified_user</span>Seguro</div></div>
+                <form method="post" id="form_reg_dato" name="form_reg_dato" autocomplete="on">
 
-          <label for="TEMPORADA">Seleccionar Temporada</label>
-          <select class="form-control" id="TEMPORADA" name="TEMPORADA">
-              <option value="">-- Seleccione --</option>
-              <?php foreach ($ARRAYTEMPORADA as $r) : ?>
-                  <option value="<?php echo $r['ID_TEMPORADA']; ?>" <?php if ($TEMPORADA == $r['ID_TEMPORADA']) { echo "selected"; } ?>><?php echo $r['NOMBRE_TEMPORADA']; ?></option>
-              <?php endforeach; ?>
-          </select>
-          <label id="val_select_temporada" class="validacion"><?php echo  $MENSAJE2; ?></label>
-
-          <button type="submit" class="btn btn-primary" id="ENTRAR" name="ENTRAR" value="ENTRAR" onclick="return validacion()">Ingresar</button>
-        </form>
-
-        <form class="form-one-line" data-form-layout="oneline-2" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:0.65rem;padding:0.65rem 0;border-bottom:1px solid #3a3a3a;" method="post">
-          <button type="submit" class="btn btn-danger" id="SALIR" name="SALIR" value="SALIR">Salir</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Fondo / Slider -->
-    <div class="right-panel">
-      <div class="slide active" style="background-image:url('../../assest/img/abeja.jpg')"></div>
-      <div class="slide" style="background-image:url('../../assest/img/arandano.jpg')"></div>
-      <div class="slide" style="background-image:url('../../assest/img/esparragos.jpg')"></div>
-    </div>
-  </div>
-
-  <script>
-    // Slider animado
-    const slides=document.querySelectorAll('.slide');let idx=0;
-    setInterval(()=>{slides[idx].classList.remove('active');idx=(idx+1)%slides.length;slides[idx].classList.add('active');},5000);
-  </script>
-
-  <?php if ($detect->isMobile() && $detect->isiOS() ): ?>
-    <script>
-      Swal.fire({
-        icon: 'info',
-        title: 'Celular iPhone detectado',
-        html:"Hemos detectado que estás desde un iPhone 📱<br>Algunas vistas no están adaptadas, sugerimos que uses tablet Android, iPad o computador.",
-        confirmButtonText:"Vale! 😉"
-      })
-    </script>
-  <?php endif ?>
-
-  <?php if ($detect->isMobile() && $detect->isAndroidOS()): ?>
-    <script>
-      Swal.fire({
-        icon: 'info',
-        title: 'Celular Android detectado',
-        html:"Hemos detectado que estás desde un Android 🤖<br>Algunas vistas no están adaptadas, sugerimos que uses tablet Android, iPad o computador.",
-        confirmButtonText:"Vale! 😉"
-      })
-    </script>
-  <?php endif ?>
-
+                    <div class="form-grid">
+                        <div class="form-group"><label class="form-label" for="EMPRESA">Empresa</label><select class="form-input" id="EMPRESA" name="EMPRESA" required><option value="">Seleccione empresa</option><?php foreach ($ARRAYEMPRESA as $r): ?><option value="<?= h($r['ID_EMPRESA']) ?>" <?= $EMPRESA == $r['ID_EMPRESA'] ? "selected" : "" ?>><?= h($r['NOMBRE_EMPRESA']) ?></option><?php endforeach; ?></select><span id="val_select_empresa" class="validacion"><?= h($MENSAJE ?? '') ?></span></div><div class="form-group"><label class="form-label" for="TEMPORADA">Temporada</label><select class="form-input" id="TEMPORADA" name="TEMPORADA" required><option value="">Seleccione temporada</option><?php foreach ($ARRAYTEMPORADA as $r): ?><option value="<?= h($r['ID_TEMPORADA']) ?>" <?= $TEMPORADA == $r['ID_TEMPORADA'] ? "selected" : "" ?>><?= h($r['NOMBRE_TEMPORADA']) ?></option><?php endforeach; ?></select><span id="val_select_temporada" class="validacion"><?= h($MENSAJE2 ?? '') ?></span></div>
+                        <div class="security-note"><span class="material-icons-round">lock</span>Acceso privado para usuarios autorizados</div>
+                        <div class="btn-row"><button type="submit" class="btn btn-login" id="ENTRAR" name="ENTRAR" value="ENTRAR">Ingresar</button><button type="submit" class="btn btn-back" id="SALIR" name="SALIR" value="SALIR" formnovalidate>Salir</button></div>
+                    </div>
+                </form>
+            </section>
+            <div class="footer-text">SmartBerry ONE · Selección privada de parámetros.</div>
+        </div>
+    </section>
+    <section class="right-panel">
+        <div class="slider-bg"><div class="slide active" style="background-image:url('../../assest/img/abeja.jpg')"></div><div class="slide" style="background-image:url('../../assest/img/arandano.jpg')"></div><div class="slide" style="background-image:url('../../assest/img/esparragos.jpg')"></div></div>
+        <div class="image-cover"></div>
+        <div class="right-info"><div class="right-kicker"><span class="material-icons-round">tune</span>Parámetros</div><h2>Continúa con empresa y temporada</h2><p>Selecciona los parámetros comerciales para trabajar en exportadora.</p><div class="right-tags"><div class="right-tag"><span class="material-icons-round">business</span>Empresa</div><div class="right-tag"><span class="material-icons-round">event</span>Temporada</div></div></div>
+    </section>
+</main>
+<script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    setInterval(() => { slides[currentSlide].classList.remove('active'); currentSlide = (currentSlide + 1) % slides.length; slides[currentSlide].classList.add('active'); }, 5000);
+</script>
+<?php if (isset($alertScript)) { echo $alertScript; } ?>
 <?php
 if (isset($_REQUEST['ENTRAR'])) {
     $_SESSION["ID_EMPRESA"] = $_REQUEST['EMPRESA'];
     $_SESSION["ID_TEMPORADA"] = $_REQUEST['TEMPORADA'];
-    $AUSUARIO_ADO->agregarAusuario2('NULL',3,0,"".$_SESSION["NOMBRE_USUARIO"].", Inicio Sesion, Seleccion","usuario_usuario",$_SESSION["ID_USUARIO"],$_SESSION["ID_USUARIO"],$_REQUEST["EMPRESA"],'NULL',$_REQUEST['TEMPORADA'] );            
+    $AUSUARIO_ADO->agregarAusuario2('NULL',3,0,"".$_SESSION["NOMBRE_USUARIO"].", Inicio Sesion, Seleccion","usuario_usuario",$_SESSION["ID_USUARIO"],$_SESSION["ID_USUARIO"],$_REQUEST["EMPRESA"],'NULL',$_REQUEST['TEMPORADA'] );
     echo "<script> location.href = 'index.php';</script>";
 }
 if (isset($_REQUEST['SALIR'])) {

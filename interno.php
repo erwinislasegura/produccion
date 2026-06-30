@@ -141,30 +141,9 @@
             </div>
         </div>
 
-        <!-- Indicadores económicos -->
-        <div class="indicadores-panel">
-            <div class="indicadores-title">
-                <span class="material-icons">trending_up</span> Indicadores Económicos
-            </div>
-            <div class="indicadores-list">
-                <div class="indicador">
-                    <span class="label">UF</span>
-                    <span class="valor" id="uf">-</span>
-                </div>
-                <div class="indicador">
-                    <span class="label">Dólar</span>
-                    <span class="valor" id="dolar">-</span>
-                </div>
-                <div class="indicador">
-                    <span class="label">Euro</span>
-                    <span class="valor" id="euro">-</span>
-                </div>
-            </div>
-            <div class="eco-date" id="fechaIndicadores">Actualizado: -</div>
         </div>
-    </div>
 
-    <div class="green-divider">
+        <div class="green-divider">
         <svg viewBox="0 0 18 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9,0 Q18,500 9,1000" stroke="#4caf50" stroke-width="3" fill="none"/>
         </svg>
@@ -190,25 +169,6 @@
       i = (i + 1) % slides.length;
       slides[i].classList.add('active');
     }, 6000);
-
-    // Indicadores económicos dinámicos
-    async function cargarIndicadores() {
-      try {
-        const resp = await fetch("https://mindicador.cl/api");
-        const data = await resp.json();
-        document.getElementById("uf").textContent = data.uf.valor.toLocaleString("es-CL",{style:"currency",currency:"CLP"});
-        document.getElementById("dolar").textContent = data.dolar.valor.toLocaleString("es-CL",{style:"currency",currency:"CLP"});
-        document.getElementById("euro").textContent = data.euro.valor.toLocaleString("es-CL",{style:"currency",currency:"CLP"});
-        document.getElementById("fechaIndicadores").textContent="Actualizado: "+new Date(data.fecha).toLocaleDateString("es-CL");
-      } catch(e){
-        document.getElementById("uf").textContent="N/D";
-        document.getElementById("dolar").textContent="N/D";
-        document.getElementById("euro").textContent="N/D";
-        document.getElementById("fechaIndicadores").textContent="Sin conexión";
-      }
-    }
-    cargarIndicadores();
-    setInterval(cargarIndicadores,60000);
   </script>
 </body>
 </html>

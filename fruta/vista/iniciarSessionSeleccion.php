@@ -93,35 +93,11 @@ function h($string) {
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="../../assest/js/sweetalert2@11.js"></script>
   <style>
-    /* Mantener estilos originales */
+    :root{--vf-berry:#7f1734;--vf-berry-dark:#4d0d20;--vf-leaf:#4f8a2f;--vf-leaf-soft:#eaf4e4;--vf-ink:#263238;--vf-muted:#667085;--vf-border:#e6e9ef;--vf-card:rgba(255,255,255,.92)}
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-    body,html{height:100%;background:#f5f7fa;}
-    .container{display:flex;min-height:100vh}
-    .left-panel{
-        flex:1;max-width:420px;background:#fff;padding:40px;
-        display:flex;flex-direction:column;justify-content:center;
-        box-shadow:0 2px 10px rgba(0,0,0,.05);
-    }
-    .logo{text-align:center;margin-bottom:25px}
-    .logo img{max-width:180px}
-    .logo p{color:#555;font-size:.9rem;margin-top:8px}
-    h2{text-align:center;color:#0a3a6a;font-size:1.3rem;margin-bottom:20px;font-weight:700}
-    form{width:100%;max-width:320px;margin:auto}
-    .form-input{width:100%;padding:12px;border:1px solid #ccd4e0;border-radius:8px;margin-bottom:15px;font-size:14px}
-    label{font-size:.85rem;color:#444;margin-bottom:4px;display:block}
-    .btn{width:100%;padding:12px;border:none;border-radius:8px;font-weight:600;cursor:pointer;margin-top:5px;text-decoration:none;display:block;text-align:center}
-    .btn-login{background:#28a745;color:#fff}
-    .btn-login:hover{background:#218838}
-    .btn-back{background:#dc3545;color:#fff}
-    .btn-back:hover{background:#b02a37}
-    .right-panel{flex:2;position:relative;overflow:hidden}
-    .slide{position:absolute;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s}
-    .slide.active{opacity:1}
-    @media(max-width:768px){
-      .container{flex-direction:column}
-      .left-panel{max-width:none;width:100%}
-      .right-panel{height:220px}
-    }
+    body,html{min-height:100%;background:#f7f8f5;color:var(--vf-ink)}
+    body{background:radial-gradient(circle at top left,rgba(127,23,52,.16),transparent 32%),linear-gradient(135deg,#fff 0%,#f5f8ef 100%)}
+    .container{display:flex;min-height:100vh;position:relative;overflow:hidden}.left-panel{width:min(100%,480px);background:var(--vf-card);backdrop-filter:blur(18px);padding:48px 42px;display:flex;flex-direction:column;justify-content:center;box-shadow:24px 0 70px rgba(77,13,32,.10);z-index:2}.logo{text-align:center;margin-bottom:26px}.logo img{max-width:220px;width:72%;height:auto}.logo p{color:var(--vf-muted);font-size:13px;margin-top:12px}.logo p a{color:var(--vf-berry);text-decoration:none;font-weight:600}.logo p a:hover{text-decoration:underline}h2{text-align:center;color:var(--vf-berry-dark);font-size:20px;margin-bottom:8px;font-weight:800;letter-spacing:.04em}.subtitle{text-align:center;color:var(--vf-muted);font-size:14px;line-height:1.5;margin-bottom:24px}form{width:100%;background:#fff;border:1px solid rgba(127,23,52,.11);border-radius:24px;padding:24px;box-shadow:0 22px 50px rgba(77,13,32,.10)}label{font-size:13px;color:var(--vf-berry-dark);margin-bottom:7px;display:block;font-weight:800}.form-input{width:100%;padding:14px 15px;border:1px solid var(--vf-border);border-radius:14px;margin-bottom:16px;font-size:14px;background:#fbfcfb;transition:border-color .2s,box-shadow .2s,background .2s}.form-input:focus{outline:none;border-color:var(--vf-berry);box-shadow:0 0 0 4px rgba(127,23,52,.12);background:#fff}.btn{width:100%;padding:14px;border:none;border-radius:14px;font-weight:800;cursor:pointer;margin-top:10px;text-decoration:none;display:block;text-align:center;transition:transform .2s,box-shadow .2s,background .2s}.btn:hover{transform:translateY(-1px)}.btn-login{background:linear-gradient(135deg,var(--vf-berry),#a52749);color:#fff;box-shadow:0 14px 28px rgba(127,23,52,.24)}.btn-login:hover{background:linear-gradient(135deg,var(--vf-berry-dark),var(--vf-berry))}.btn-back{background:#fff;color:var(--vf-berry-dark);border:1px solid rgba(127,23,52,.18);box-shadow:0 12px 26px rgba(77,13,32,.08)}.right-panel{flex:1;position:relative;overflow:hidden;background:#1f2a1d}.right-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(77,13,32,.28),rgba(22,44,19,.12)),radial-gradient(circle at 78% 18%,rgba(255,255,255,.20),transparent 28%);z-index:1}.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.04);transition:opacity 1.5s,transform 6s}.slide.active{opacity:1;transform:scale(1)}@media(max-width:820px){.container{flex-direction:column}.left-panel{width:100%;padding:34px 22px}.right-panel{height:280px;order:-1}.logo img{max-width:190px}}
   </style>
   <link rel="stylesheet" href="../../assest/css/fruta-form-compact.css">
 
@@ -135,8 +111,9 @@ function h($string) {
         <p><a href="https://www.volcanfoods.cl" target="_blank" rel="noopener noreferrer" style="color:#555; text-decoration:none;">www.volcanfoods.cl</a></p>
       </div>
       <h2>Selección de Parámetros</h2>
+      <p class="subtitle">Elige empresa, planta y temporada para continuar con tu operación.</p>
       
-      <form class="form-one-line" data-form-layout="oneline-1" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:0.65rem;padding:0.65rem 0;border-bottom:1px solid #3a3a3a;" method="post" id="form_reg_dato" novalidate>
+      <form method="post" id="form_reg_dato" novalidate>
         <input type="hidden" name="csrf_token" value="<?= h($_SESSION['csrf_token']) ?>">
         
         <label for="EMPRESA">Seleccionar Empresa</label>

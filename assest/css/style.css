@@ -1,0 +1,203 @@
+﻿
+
+
+
+/* Ensure that the demo table scrolls */
+th, td { white-space: nowrap; }
+div.dataTables_wrapper {
+    width: auto;
+    margin: 0 auto;
+}
+
+
+
+/**
+FORMATO DE MENSAJE DE VALIDACION DE FORMULARIO
+**/
+
+
+.validacion, #validacion {
+    color: #ff0000;
+    font-size: 8px;
+    text-transform:capitalize;
+}
+
+.validacion2, #validacion2 {
+    color: #ff0000;
+    font-size: 20px;
+    text-transform:uppercase;
+}
+
+
+
+
+
+
+/**
+ FORMATO MENSAJE DE VALIDACIOND DE TABLAS VACIAS  
+  **/
+
+#noDato {
+    background-color: transparent;
+    
+    color           : #ff0000;
+    text-align      : center;
+}
+
+#siDato {
+    background-color: transparent;
+    color           : #FFFAFA;
+}
+
+/*ALIGNACIONTEXTO*/
+
+.center, #center {
+
+
+    text-align: center;
+}
+
+.justify, #justify {
+
+    text-align: justify;
+}
+
+.right, #right {
+
+    text-align: right;
+}
+
+.left, #left {
+
+    text-align: left;
+}
+
+.start, #start {
+    text-align: start;
+}
+
+.end, #end {
+    text-align: end;
+
+}
+
+
+/*
+ * ESTILO GLOBAL SISTEMARR
+ * - Bordes redondeados en campos
+ * - Altura compacta para formularios
+ */
+.sistemRR .form-group {
+    margin-bottom: 10px;
+}
+
+.sistemRR label,
+.sistemRR .form-group label,
+.sistemRR .modal-body label {
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.sistemRR .form-control,
+.sistemRR .select2-container--default .select2-selection--single,
+.sistemRR .select2-container--default .select2-selection--multiple,
+.sistemRR .input-group-text {
+    border-radius: 8px !important;
+    min-height: 34px !important;
+    height: 34px !important;
+    font-size: 12px !important;
+}
+
+
+
+.sistemRR .select2-container--default .select2-selection--single {
+    height: 34px !important;
+}
+
+.sistemRR .select2-container--default .select2-selection--multiple {
+    min-height: 34px !important;
+}
+
+.sistemRR textarea.form-control {
+    min-height: 70px !important;
+    height: auto !important;
+}
+
+.sistemRR .select2-container .select2-selection--single .select2-selection__rendered {
+    line-height: 32px !important;
+    padding-left: 10px;
+    font-size: 12px !important;
+}
+
+.sistemRR .select2-container .select2-selection--single .select2-selection__arrow {
+    height: 34px !important;
+}
+
+/*
+ * RESUMEN DE TOTALES EN LISTADOS
+ * - Controles completamente redondeados
+ * - Mayor espacio horizontal para mejorar lectura
+ */
+.sistemRR .box-footer .btn-toolbar .input-group .input-group-prepend {
+    display: flex;
+    align-items: center;
+}
+
+.sistemRR .box-footer .btn-toolbar .input-group .input-group-prepend .input-group-text,
+.sistemRR .box-footer .btn-toolbar .input-group .input-group-prepend .btn {
+    border-radius: 999px !important;
+    padding: 0.375rem 1rem !important;
+}
+
+.sistemRR .box-footer .btn-toolbar .input-group .input-group-prepend .btn {
+    margin-left: 6px;
+    min-width: 84px;
+}
+
+
+/*
+ * Totales en registro de repaletizaje PT frigorífico
+ * - Hace coincidir apariencia redondeada de Proceso/Reembalaje
+ */
+.sistemRR .resumen-totales-pill .input-group {
+    align-items: center;
+}
+
+.sistemRR .resumen-totales-pill .input-group .input-group-text,
+.sistemRR .resumen-totales-pill .input-group .form-control {
+    border-radius: 999px !important;
+}
+
+.sistemRR .resumen-totales-pill .input-group .input-group-text {
+    padding: 0.375rem 1rem !important;
+}
+
+.sistemRR .resumen-totales-pill .input-group .form-control {
+    margin-left: 6px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-width: 110px;
+}
+
+
+.sistemRR .resumen-totales-pill .input-group .btn {
+    border-radius: 999px !important;
+    border-top-left-radius: 999px !important;
+    border-bottom-left-radius: 999px !important;
+    border-top-right-radius: 999px !important;
+    border-bottom-right-radius: 999px !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    min-width: 84px;
+}
+
+
+
+
+/*
+ * Botones de formularios
+ * - Estilo redondeado consistente en acciones de formularios
+ */
+.sistemRR form .btn {
+    border-radius: 999px !important;
+}

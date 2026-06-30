@@ -1,0 +1,69 @@
+/* Actualización de datos de prueba para acceso | Usuario: eisla / Eisla123 */
+
+INSERT IGNORE INTO `usuario_tusuario` (`ID_TUSUARIO`, `NOMBRE_TUSUARIO`, `ESTADO_REGISTRO`, `INGRESO`, `MODIFICACION`, `ID_USUARIOI`, `ID_USUARIOM`) VALUES
+(1, 'Super Administrador', 1, NOW(), NOW(), NULL, NULL);
+
+INSERT IGNORE INTO `usuario_ptusuario` (`ID_PTUSUARIO`, `FRUTA`, `FAVISO`, `FRABIERTO`, `FGRANEL`, `FGRECEPCION`, `FGDESPACHO`, `FGGUIA`, `FPACKING`, `FPPROCESO`, `FPREEMBALEJE`, `FSAG`, `FSAGINSPECCION`, `FFRIGORIFICO`, `FFRECEPCION`, `FFRDESPACHO`, `FFRGUIA`, `FFRREPALETIZAJE`, `FFRPC`, `FFRCFOLIO`, `FCFRUTA`, `FCFRECHAZO`, `FCFLEVANTAMIENTO`, `FEXISTENCIA`, `MATERIALES`, `MRABIERTO`, `MMATERIALES`, `MMRECEPION`, `MMDEAPCHO`, `MMGUIA`, `MENVASE`, `MERECEPCION`, `MEDESPACHO`, `MEGUIA`, `MADMINISTRACION`, `MAOC`, `MAOCAR`, `MKARDEX`, `MKMATERIAL`, `MKENVASE`, `EXPORTADORA`, `EMATERIALES`, `EEXPORTACION`, `ELIQUIDACION`, `EPAGO`, `EFRUTA`, `EFCICARGA`, `EINFORMES`, `ESTADISTICA`, `ESTARVSP`, `ESTASTOPMP`, `ESTAINFORME`, `ESTAEXISTENCIA`, `ESTAPRODUCTOR`, `MANTENEDORES`, `MREGISTRO`, `MEDITAR`, `MVER`, `MAGRUPADO`, `ADMINISTRADOR`, `ADUSUARIO`, `ADAPERTURA`, `ADAVISO`, `ESTADO_REGISTRO`, `INGRESO`, `MODIFICACION`, `ID_TUSUARIO`, `ID_USUARIOI`, `ID_USUARIOM`) VALUES(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, NOW(), NOW(), 1, 1, 1);
+
+INSERT IGNORE INTO `usuario_usuario` (`ID_USUARIO`, `NOMBRE_USUARIO`, `PNOMBRE_USUARIO`, `SNOMBRE_USUARIO`, `PAPELLIDO_USUARIO`, `SAPELLIDO_USUARIO`, `CONTRASENA_USUARIO`, `EMAIL_USUARIO`, `TELEFONO_USUARIO`, `NINTENTO`, `ESTADO_REGISTRO`, `INGRESO`, `MODIFICACION`, `ID_TUSUARIO`, `NIVEL_USUARIO`) VALUES
+(1, 'eisla', 'Usuario', 'Prueba', 'Eisla', 'Demo', SHA2('Eisla123', 512), 'eisla@example.com', 56999999999, 0, 1, NOW(), NOW(), 1, 'ADMIN');
+
+INSERT IGNORE INTO `principal_empresa` (`ID_EMPRESA`, `RUT_EMPRESA`, `DV_EMPRESA`, `NOMBRE_EMPRESA`, `RAZON_SOCIAL_EMPRESA`, `DIRECCION_EMPRESA`, `GIRO_EMPRESA`, `TELEFONO_EMPRESA`, `ENCARGADO_COMPRA_EMPRESA`, `LOGO_EMPRESA`, `ESTADO_REGISTRO`, `INGRESO`, `MODIFICACION`, `ID_COMUNA`, `ID_PROVINCIA`, `ID_REGION`, `ID_USUARIOI`, `ID_USUARIOM`, `COC`, `FOLIO_MANUAL`, `USO_CALIBRE`) VALUES
+(1, 12345678, '9', 'Eisla Demo', 'Eisla Demo SpA', 'Dirección Demo 123', 'Agrícola', '+56 9 1234 5678', 'Contacto Demo', NULL, 1, CURDATE(), CURDATE(), NULL, NULL, NULL, 1, 1, NULL, 0, 0);
+
+INSERT IGNORE INTO `principal_temporada` (`ID_TEMPORADA`, `FECHA_INICIO_TEMPORADA`, `FECHA_TERMINO_TEMPORADA`, `NOMBRE_TEMPORADA`, `ESTADO_REGISTRO`, `INGRESO`, `MODIFICACION`, `ID_USUARIOI`, `ID_USUARIOM`) VALUES
+(1, '2025-10-01', '2026-09-30', 'Temporada Prueba 2025-2026', 1, CURDATE(), CURDATE(), 1, 1);
+
+INSERT IGNORE INTO `principal_planta` (`ID_PLANTA`, `NOMBRE_PLANTA`, `RAZON_SOCIAL_PLANTA`, `DIRECCION_PLANTA`, `CODIGO_SAG_PLANTA`, `FDA_PLANTA`, `TPLANTA`, `ESTADO_REGISTRO`, `INGRESO`, `MODIFICACION`, `ID_COMUNA`, `ID_PROVINCIA`, `ID_REGION`, `ID_USUARIOI`, `ID_USUARIOM`) VALUES
+(1, 'Planta Demo Eisla', 'Planta Demo Eisla SpA', 'Camino Demo 456', 12345, NULL, 1, 1, CURDATE(), CURDATE(), NULL, NULL, NULL, 1, 1);
+
+-- Relación de mercados autorizados por productor (evitar duplicados)
+DELETE t1 FROM fruta_rmercado t1
+INNER JOIN fruta_rmercado t2
+WHERE t1.ID_RMERCADO > t2.ID_RMERCADO
+  AND t1.ID_PRODUCTOR = t2.ID_PRODUCTOR
+  AND t1.ID_MERCADO = t2.ID_MERCADO;
+
+SET @idx_existe := (
+  SELECT COUNT(1)
+  FROM information_schema.statistics
+  WHERE table_schema = DATABASE()
+    AND table_name = 'fruta_rmercado'
+    AND index_name = 'uk_fruta_rmercado_productor_mercado'
+);
+
+SET @sql_idx := IF(
+  @idx_existe = 0,
+  'ALTER TABLE fruta_rmercado ADD UNIQUE KEY `uk_fruta_rmercado_productor_mercado` (`ID_PRODUCTOR`,`ID_MERCADO`)',
+  'SELECT "Indice uk_fruta_rmercado_productor_mercado ya existe"'
+);
+
+PREPARE stmt_idx FROM @sql_idx;
+EXECUTE stmt_idx;
+DEALLOCATE PREPARE stmt_idx;
+
+-- Relación de mercados por estándar de exportación
+CREATE TABLE IF NOT EXISTS `estandar_rexportacion_mercado` (
+  `ID_REEXPORTACIONMERCADO` bigint(20) NOT NULL AUTO_INCREMENT,
+  `NUMERO_REEXPORTACIONMERCADO` bigint(20) NOT NULL,
+  `ID_ESTANDAR` bigint(20) NOT NULL,
+  `ID_MERCADO` bigint(20) NOT NULL,
+  `ID_EMPRESA` bigint(20) NOT NULL,
+  `ESTADO_REGISTRO` int(11) NOT NULL DEFAULT 1,
+  `INGRESO` date NOT NULL,
+  `MODIFICACION` date NOT NULL,
+  `ID_USUARIOI` bigint(20) NOT NULL,
+  `ID_USUARIOM` bigint(20) NOT NULL,
+  PRIMARY KEY (`ID_REEXPORTACIONMERCADO`),
+  KEY `idx_rexportacion_mercado_estandar` (`ID_ESTANDAR`),
+  KEY `idx_rexportacion_mercado_mercado` (`ID_MERCADO`),
+  KEY `idx_rexportacion_mercado_empresa` (`ID_EMPRESA`),
+  KEY `idx_rexportacion_mercado_usuarioi` (`ID_USUARIOI`),
+  KEY `idx_rexportacion_mercado_usuariom` (`ID_USUARIOM`),
+  UNIQUE KEY `uk_rexportacion_mercado_estandar_mercado` (`ID_ESTANDAR`,`ID_MERCADO`),
+  CONSTRAINT `fk_rexportacion_mercado_estandar` FOREIGN KEY (`ID_ESTANDAR`) REFERENCES `estandar_eexportacion` (`ID_ESTANDAR`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_rexportacion_mercado_mercado` FOREIGN KEY (`ID_MERCADO`) REFERENCES `fruta_mercado` (`ID_MERCADO`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `fk_rexportacion_mercado_empresa` FOREIGN KEY (`ID_EMPRESA`) REFERENCES `principal_empresa` (`ID_EMPRESA`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `fk_rexportacion_mercado_usuarioi` FOREIGN KEY (`ID_USUARIOI`) REFERENCES `usuario_usuario` (`ID_USUARIO`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `fk_rexportacion_mercado_usuariom` FOREIGN KEY (`ID_USUARIOM`) REFERENCES `usuario_usuario` (`ID_USUARIO`) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,250 @@
+.ux-menu-search-item {
+  padding: 10px 12px 6px;
+}
+
+.ux-menu-search-wrap {
+  padding: 0;
+}
+
+.ux-menu-search {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.ux-menu-search::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ===== Mejoras menú lateral ===== */
+.main-sidebar .sidebar .header {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: #8b99ab;
+  padding: 14px 14px 7px !important;
+  text-transform: uppercase;
+}
+
+.main-sidebar .sidebar-menu > li > a,
+.main-sidebar .sidebar-menu li.treeview > a,
+.main-sidebar .treeview-menu > li > a {
+  font-weight: 400;
+  letter-spacing: 0.008em;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.main-sidebar .sidebar-menu > li > a {
+  border-radius: 10px;
+  margin: 2px 10px;
+  min-height: 37px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #4f657d;
+}
+
+.main-sidebar .sidebar-menu > li.treeview > a > span:first-of-type {
+  font-weight: 600;
+}
+
+.main-sidebar .sidebar-menu > li > a:hover,
+.main-sidebar .treeview-menu > li > a:hover {
+  background: rgba(47, 111, 176, 0.1);
+  color: #2d4f74;
+}
+
+.main-sidebar .treeview-menu {
+  margin: 4px 0 8px 18px;
+  padding-left: 9px;
+  border-left: 1px solid rgba(201, 214, 223, 0.14);
+}
+
+.main-sidebar .treeview-menu > li > a {
+  margin: 1px 6px;
+  border-radius: 8px;
+  padding: 6px 10px 6px 11px;
+  font-size: 12.5px;
+  color: #5d7388;
+  font-weight: 400;
+}
+
+.main-sidebar .sidebar-menu li.active > a {
+  background: rgba(47, 111, 176, 0.12);
+  color: #284b70;
+  box-shadow: none;
+}
+
+.main-sidebar .sidebar-menu li > a.ux-link-active {
+  position: relative;
+  background: rgba(47, 111, 176, 0.16);
+  color: #1f466f;
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 #2f6fb0, 0 6px 16px rgba(8, 20, 36, 0.08);
+}
+
+.main-sidebar .sidebar-menu li > a.ux-link-active::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #2f6fb0;
+  transform: translateY(-50%);
+}
+
+.main-sidebar .treeview-menu > li.active > a,
+.main-sidebar .treeview-menu > li > a.ux-link-active {
+  background: rgba(47, 111, 176, 0.14);
+  color: #1f4f82;
+  font-weight: 600;
+}
+
+.main-sidebar .sidebar-menu a .svg-icon {
+  opacity: 1;
+}
+
+/* ===== Sistema visual global: botones y formularios ===== */
+
+/* Botón base (sin alterar componentes que no usan .btn) */
+.btn,
+a.btn,
+input.btn {
+  border-radius: 10px;
+  padding: 8px 20px;
+  min-height: 40px;
+  border-width: 1px;
+  border-style: solid;
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn.btn-sm,
+a.btn.btn-sm,
+input.btn.btn-sm {
+  min-height: 32px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+}
+
+.btn:hover,
+a.btn:hover,
+input.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:focus,
+.btn:focus-visible,
+a.btn:focus,
+a.btn:focus-visible,
+input.btn:focus,
+input.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.18rem rgba(77, 163, 255, 0.22);
+}
+
+.btn:disabled,
+.btn.disabled,
+a.btn.disabled,
+input.btn:disabled {
+  opacity: 0.7;
+  transform: none;
+}
+
+/* Colores por tipo de acción */
+.btn-guardar,
+.btn-success,
+.btn-primary,
+button.btn[name*="GUARDAR" i],
+input.btn[name*="GUARDAR" i],
+input.btn[value*="GUARDAR" i] {
+  background-color: #28a745;
+  border-color: #23933d;
+  color: #ffffff;
+}
+
+.btn-cerrar,
+.btn-cancelar,
+.btn-warning,
+.btn-danger,
+button.btn[name*="CANCELAR" i],
+button.btn[name*="CERRAR" i],
+input.btn[name*="CANCELAR" i],
+input.btn[name*="CERRAR" i],
+input.btn[value*="CANCELAR" i],
+input.btn[value*="CERRAR" i] {
+  background-color: #ffc107;
+  border-color: #e3ac06;
+  color: #1f1f1f;
+}
+
+.btn-informe,
+.btn-info,
+button.btn[name*="INFORME" i],
+button.btn[name*="REPORTE" i],
+input.btn[name*="INFORME" i],
+input.btn[name*="REPORTE" i],
+input.btn[value*="INFORME" i],
+input.btn[value*="REPORTE" i] {
+  background-color: #0d6efd;
+  border-color: #0a5cd6;
+  color: #ffffff;
+}
+
+.btn-tarja,
+button.btn[name*="TARJA" i],
+input.btn[name*="TARJA" i],
+input.btn[value*="TARJA" i] {
+  background-color: #5bc0de;
+  border-color: #44adcc;
+  color: #ffffff;
+}
+
+/* Formularios */
+.form-control,
+select,
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"],
+input[type="search"],
+input[type="tel"],
+input[type="url"] {
+  border-radius: 8px;
+  border: 1px solid #d6dde5;
+  padding: 8px 10px;
+  min-height: 38px;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus,
+select:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+input[type="time"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus {
+  outline: none;
+  border-color: #4da3ff;
+  box-shadow: 0 0 0 0.18rem rgba(77, 163, 255, 0.2);
+}

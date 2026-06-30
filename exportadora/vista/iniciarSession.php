@@ -59,12 +59,6 @@ function h($string) {
     .btn-login{background:#28a745;color:#fff}
     .btn-login:hover{background:#218838}
     .btn-link{display:block;text-align:center;color:#1a2b4c;text-decoration:none;padding:12px;border:1px solid #ccd4e0;border-radius:8px;margin-top:10px}
-    .economics{margin-top:20px}
-    .economics h4{font-size:14px;margin-bottom:12px;color:#1a2b4c}
-    .eco-list{display:flex;gap:20px}
-    .eco-item{font-size:14px;color:#1a2b4c}
-    .eco-item span{display:block;color:#c62828;font-weight:700;margin-top:4px}
-    .eco-date{text-align:center;font-size:12px;color:#666;margin-top:10px}
     .right-panel{flex:2;position:relative;overflow:hidden}
     .slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s}
     .slide.active{opacity:1}
@@ -116,15 +110,6 @@ function h($string) {
         </form>
       </div>
       <a href="/smartberry/estadistica/vista/iniciarSession.php" class="btn-link">Portal Productores</a>
-      <div class="economics card">
-        <h4>Indicadores Económicos</h4>
-        <div class="eco-list">
-          <div class="eco-item">UF <span id="uf">...</span></div>
-          <div class="eco-item">Dólar <span id="dolar">...</span></div>
-          <div class="eco-item">Euro <span id="euro">...</span></div>
-        </div>
-        <div class="eco-date" id="fechaIndicadores">Cargando...</div>
-      </div>
     </div>
     <div class="right-panel">
       <div class="slide active" style="background-image:url('../../assest/img/abeja.jpg')"></div>
@@ -148,24 +133,6 @@ function h($string) {
         }
       });
     }
-
-    async function cargarIndicadores() {
-      try {
-        const resp = await fetch("https://mindicador.cl/api");
-        const data = await resp.json();
-        document.getElementById("uf").innerText = "$" + new Intl.NumberFormat("es-CL", { maximumFractionDigits: 1 }).format(data.uf.valor);
-        document.getElementById("dolar").innerText = "$" + new Intl.NumberFormat("es-CL", { maximumFractionDigits: 1 }).format(data.dolar.valor);
-        document.getElementById("euro").innerText = "$" + new Intl.NumberFormat("es-CL", { maximumFractionDigits: 1 }).format(data.euro.valor);
-        document.getElementById("fechaIndicadores").innerText = "Actualizado: " + new Date(data.fecha).toLocaleDateString("es-CL");
-      } catch (e) {
-        document.getElementById("uf").innerText = "N/D";
-        document.getElementById("dolar").innerText = "N/D";
-        document.getElementById("euro").innerText = "N/D";
-        document.getElementById("fechaIndicadores").innerText = "Sin conexión";
-      }
-    }
-    cargarIndicadores();
-    setInterval(cargarIndicadores, 60000);
   </script>
 
 <?php

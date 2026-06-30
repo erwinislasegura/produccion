@@ -149,18 +149,10 @@ if (isset($_SESSION["NOMBRE_USUARIO"])) {
     }
 
 
-    if (isset($_SESSION["TMONEDA1"]) && isset($_SESSION["TMONEDA2"])) {
-        $TMONEDA1 = $_SESSION["TMONEDA1"];
-        $TMONEDA2 = $_SESSION["TMONEDA2"];      
-        $TTMONEDA1 = $_SESSION["TTMONEDA1"];
-        $TTMONEDA2 = $_SESSION["TTMONEDA2"];    
-    } else {        
-        include_once "../../assest/config/indicadorEconomico.php";
-        $TMONEDA1 = $_SESSION["TMONEDA1"];
-        $TMONEDA2 = $_SESSION["TMONEDA2"];   
-        $TTMONEDA1 = $_SESSION["TTMONEDA1"];
-        $TTMONEDA2 = $_SESSION["TTMONEDA2"];        
-    }
+    $TMONEDA1 = $_SESSION["TMONEDA1"] ?? null;
+    $TMONEDA2 = $_SESSION["TMONEDA2"] ?? null;
+    $TTMONEDA1 = $_SESSION["TTMONEDA1"] ?? null;
+    $TTMONEDA2 = $_SESSION["TTMONEDA2"] ?? null;
     
 } else {
     session_destroy();

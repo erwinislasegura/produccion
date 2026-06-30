@@ -611,19 +611,6 @@ if ((int)$PRODUCTOR > 0 && (int)$ESTANDAR > 0) {
     <!- LLAMADA DE LOS ARCHIVOS NECESARIOS PARA DISEÑO Y FUNCIONES BASE DE LA VISTA -!>
         <?php include_once "../../assest/config/urlHead.php"; ?>
         <style>
-            .sistemRR .form-control,
-            .sistemRR .select2-container--default .select2-selection--single,
-            .sistemRR .select2-container--default .select2-selection--multiple {
-                border-radius: 14px !important;
-                min-height: 34px !important;
-                height: 34px;
-                font-size: 12px;
-            }
-            .sistemRR .form-group { margin-bottom: 10px; }
-            .sistemRR label { margin-bottom: 4px; font-size: 12px; }
-            .sistemRR .select2-container .select2-selection--single .select2-selection__rendered { line-height: 32px !important; padding-left: 12px; font-size: 12px; }
-            .sistemRR .select2-container .select2-selection--single .select2-selection__arrow { height: 32px !important; }
-            .sistemRR .btn { border-radius: 14px !important; min-height: 34px; }
             .alert-mercados-minimal { background: #fff3cd; border: 1px solid #ffe08a; color: #7c5a00; border-radius: 10px; padding: 8px 10px; font-size: 12px; line-height: 1.35; margin-top: 8px; }
         </style>
         <!- FUNCIONES BASES -!>

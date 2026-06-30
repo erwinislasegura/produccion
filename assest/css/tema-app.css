@@ -1236,6 +1236,8 @@ table.dataTable thead .sorting_desc_disabled::after,
   border-radius: 0;
   background: #FFFFFF !important;
   box-shadow: 0 -4px 14px rgba(12, 36, 97, 0.04);
+  position: relative;
+  z-index: 1040;
 }
 
 .main-footer .nav-link,

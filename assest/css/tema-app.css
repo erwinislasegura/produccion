@@ -1368,3 +1368,24 @@ input[type="url"] {
 .bootstrap-select .bs-searchbox .form-control {
   border-radius: 5px !important;
 }
+
+/* Footer fijo alineado desde el final del menú lateral hasta el borde derecho */
+.main-footer {
+  left: 250px;
+  width: auto;
+}
+
+.sidebar-mini.sidebar-collapse .main-footer {
+  left: 80px;
+}
+
+.sidebar-collapse:not(.sidebar-mini) .main-footer,
+.layout-top-nav .main-footer {
+  left: 0;
+}
+
+@media (max-width: 767px) {
+  .main-footer {
+    left: 0;
+  }
+}

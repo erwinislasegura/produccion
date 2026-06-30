@@ -68,6 +68,8 @@ if (isset($_SESSION["ID_TEMPORADA"])) {
        .right-panel{min-height:250px}
     }
   </style>
+  <link rel="stylesheet" href="../../assest/css/fruta-form-compact.css">
+
   <script>
     function validacion() {
         var retorno = 1;

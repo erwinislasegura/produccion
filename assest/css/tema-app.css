@@ -1057,3 +1057,335 @@ table.dataTable thead .sorting_desc_disabled::after,
 .main-sidebar .ux-menu-search::placeholder {
   color: var(--smart-muted) !important;
 }
+
+
+/* Rediseño profesional compacto: conserva colores y evita degradados */
+.main-header {
+  margin: 0;
+  border-bottom: 1px solid rgba(12, 36, 97, 0.10) !important;
+  border-radius: 0;
+  background: #FFFFFF !important;
+  box-shadow: 0 6px 18px rgba(12, 36, 97, 0.06) !important;
+}
+
+.main-header .logo-box {
+  min-height: 58px;
+  padding-right: 10px;
+  border-right: 1px solid var(--smart-border);
+}
+
+.logo-lg img {
+  max-height: 36px;
+}
+
+.main-header .navbar,
+.navbar-static-top {
+  min-height: 58px;
+  border-bottom: 0 !important;
+  border-radius: 0;
+  background: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+.main-header .push-btn,
+.main-header .full-screen,
+.navbar-custom-menu > .navbar-nav > li > a {
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px !important;
+  background: #F8FAFC !important;
+  border: 1px solid var(--smart-border);
+  box-shadow: none !important;
+}
+
+.search-bx .input-group {
+  min-height: 38px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--smart-border);
+  border-left: 3px solid var(--smart-primary);
+  background: #FFFFFF;
+  box-shadow: none;
+}
+
+.main-sidebar {
+  margin: 0;
+  border-right: 1px solid var(--smart-border) !important;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 6px 0 18px rgba(12, 36, 97, 0.04) !important;
+}
+
+.main-sidebar .sidebar {
+  padding: 8px 8px 14px;
+}
+
+.main-sidebar .sidebar .header {
+  margin: 6px 8px;
+  padding: 8px 10px !important;
+  border-radius: 8px;
+  background: #EEF2F7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main-sidebar .sidebar-menu,
+.sidebar-menu {
+  padding: 6px 0 12px;
+}
+
+.main-sidebar .sidebar-menu > li > a,
+.main-sidebar .sidebar-menu li.treeview > a,
+.main-sidebar .sidebar-menu li a {
+  min-height: 36px;
+  margin: 2px 6px;
+  padding: 7px 9px !important;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  box-shadow: none !important;
+  gap: 7px;
+  max-width: calc(100% - 12px);
+}
+
+.main-sidebar .sidebar-menu li a,
+.main-sidebar .treeview-menu li a {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main-sidebar .sidebar-menu li a span:not(.pull-right-container):not(.pull-left-container):not(.smart-menu-icon),
+.main-sidebar .treeview-menu li a span:not(.pull-right-container):not(.pull-left-container):not(.smart-menu-icon) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.main-sidebar .pull-right-container,
+.main-sidebar .pull-left-container {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.main-sidebar .sidebar-menu > li > a:hover,
+.main-sidebar .sidebar-menu li.treeview > a:hover,
+.main-sidebar .sidebar-menu li a:hover,
+.main-sidebar .treeview-menu > li > a:hover {
+  border-color: rgba(12, 36, 97, 0.12);
+  border-radius: 9px;
+  box-shadow: inset 3px 0 0 var(--smart-secondary) !important;
+}
+
+.main-sidebar .sidebar-menu li.active > a,
+.main-sidebar .sidebar-menu li > a.ux-link-active,
+.main-sidebar .treeview-menu > li.active > a,
+.main-sidebar .treeview-menu > li > a.ux-link-active {
+  border-color: rgba(215, 38, 79, 0.18);
+  border-radius: 9px;
+  box-shadow: inset 3px 0 0 var(--smart-secondary) !important;
+}
+
+.main-sidebar .treeview-menu,
+.treeview-menu {
+  margin: 2px 4px 4px 18px;
+  padding: 3px 0 3px 8px;
+  border-left: 1px solid rgba(12, 36, 97, 0.12);
+  border-radius: 0;
+}
+
+.main-sidebar .treeview-menu > li > a,
+.treeview-menu > li > a {
+  min-height: 31px;
+  margin: 1px 4px 1px 0;
+  padding: 6px 8px !important;
+  border-radius: 8px;
+  font-size: 11.5px;
+}
+
+.main-sidebar .sidebar-menu > li > a .smart-menu-icon,
+.main-sidebar .sidebar-menu > li > a .svg-icon,
+.main-sidebar a:hover .smart-menu-icon,
+.main-sidebar a.ux-link-active .smart-menu-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+  border-radius: 8px !important;
+  flex: 0 0 24px;
+}
+
+.ux-menu-search {
+  min-height: 34px;
+  border-radius: 9px !important;
+}
+
+.content-wrapper {
+  padding-top: 0;
+}
+
+.main-footer {
+  margin: 0;
+  padding: 10px 18px;
+  border-top: 1px solid var(--smart-border) !important;
+  border-radius: 0;
+  background: #FFFFFF !important;
+  box-shadow: 0 -4px 14px rgba(12, 36, 97, 0.04);
+  position: relative;
+  z-index: 1040;
+}
+
+.main-footer .nav-link,
+.main-footer .badge {
+  border-radius: 8px;
+}
+
+@media (max-width: 991px) {
+  .main-header .logo-box,
+  .main-header .navbar,
+  .navbar-static-top {
+    min-height: 54px;
+  }
+
+  .logo-lg img {
+    max-height: 32px;
+  }
+
+  .main-sidebar .sidebar-menu > li > a,
+  .main-sidebar .sidebar-menu li.treeview > a,
+  .main-sidebar .sidebar-menu li a {
+    min-height: 34px;
+    margin-left: 5px;
+    margin-right: 5px;
+    max-width: calc(100% - 10px);
+  }
+}
+
+/* Correcciones finales: menú sin solapes y footer fijo inferior */
+html,
+body {
+  padding-bottom: 52px;
+}
+
+.content-wrapper {
+  padding-bottom: 64px;
+}
+
+.main-sidebar .sidebar-menu li > a,
+.main-sidebar .treeview-menu li > a {
+  display: flex !important;
+  align-items: center;
+  width: auto;
+  max-width: calc(100% - 10px);
+  line-height: 1.25;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.main-sidebar .sidebar-menu li > a::after,
+.main-sidebar .treeview-menu li > a::after {
+  display: none !important;
+  content: none !important;
+}
+
+.main-sidebar .sidebar-menu li > a > span:not(.pull-right-container):not(.pull-left-container):not(.smart-menu-icon),
+.main-sidebar .treeview-menu li > a > span:not(.pull-right-container):not(.pull-left-container):not(.smart-menu-icon) {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.main-sidebar .treeview-menu,
+.main-sidebar .treeview-menu .treeview-menu,
+.main-sidebar .treeview-menu .treeview-menu .treeview-menu {
+  margin-left: 10px !important;
+  padding-left: 6px !important;
+}
+
+.main-sidebar .treeview-menu > li > a,
+.main-sidebar .treeview-menu .treeview-menu > li > a,
+.main-sidebar .treeview-menu .treeview-menu .treeview-menu > li > a {
+  max-width: calc(100% - 6px);
+  padding-right: 6px !important;
+  font-size: 11px;
+}
+
+.main-sidebar .pull-right-container,
+.main-sidebar .pull-left-container {
+  min-width: 14px;
+  padding-left: 4px;
+}
+
+.main-footer {
+  position: fixed !important;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3000;
+}
+
+/* Revisión global de formularios: radios sobrios máximo 5px */
+.form-control,
+.select2-selection,
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple,
+.select2-dropdown,
+.select2-search--dropdown .select2-search__field,
+.select2-container--default .select2-search--dropdown .select2-search__field,
+.custom-select,
+.input-group-text,
+.dataTables_wrapper .dataTables_filter input,
+.dataTables_wrapper .dataTables_length select,
+select,
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"],
+input[type="search"],
+input[type="tel"],
+input[type="url"] {
+  border-radius: 5px !important;
+}
+
+.select2-container--default .select2-results__option,
+.select2-results__option,
+.bootstrap-select .dropdown-toggle,
+.bootstrap-select .dropdown-menu,
+.bootstrap-select .bs-searchbox .form-control {
+  border-radius: 5px !important;
+}
+
+/* Footer fijo alineado desde el final del menú lateral hasta el borde derecho */
+.main-footer {
+  left: 250px;
+  width: auto;
+}
+
+.sidebar-mini.sidebar-collapse .main-footer {
+  left: 80px;
+}
+
+.sidebar-collapse:not(.sidebar-mini) .main-footer,
+.layout-top-nav .main-footer {
+  left: 0;
+}
+
+@media (max-width: 767px) {
+  .main-footer {
+    left: 0;
+  }
+}

@@ -831,6 +831,51 @@ if (isset($_POST)) {
             --input-focus: #3b82f6;
             --section-bg: #fbfdff;
             --section-accent: #eaf7ee;
+            --danger-soft: #fff1f2;
+        }
+
+        .sistemRR .recepcion-shell {
+            max-width: 1540px;
+            margin: 0 auto;
+        }
+
+        .sistemRR .form-status-strip {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+            margin-top: 7px;
+        }
+
+        .sistemRR .status-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: #f1f5f9;
+            color: #475569;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .sistemRR .status-chip.status-open {
+            background: #eaf7ee;
+            color: #1f7a39;
+        }
+
+        .sistemRR .status-chip.status-closed {
+            background: var(--danger-soft);
+            color: #b91c1c;
+        }
+
+        .sistemRR .field-hint {
+            display: block;
+            margin-top: 2px;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.15;
         }
 
         .sistemRR .content,

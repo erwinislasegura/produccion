@@ -1057,3 +1057,159 @@ table.dataTable thead .sorting_desc_disabled::after,
 .main-sidebar .ux-menu-search::placeholder {
   color: var(--smart-muted) !important;
 }
+
+/* Rediseño morfológico: conserva paleta corporativa y funciones existentes */
+.main-header {
+  margin: 12px 16px 0;
+  border: 1px solid rgba(12, 36, 97, 0.10) !important;
+  border-radius: 26px;
+  overflow: visible;
+  background: rgba(255, 255, 255, 0.97) !important;
+  box-shadow: 0 16px 36px rgba(12, 36, 97, 0.10) !important;
+}
+
+.main-header .logo-box {
+  border-radius: 24px 0 0 24px;
+  min-height: 72px;
+  padding-right: 18px;
+}
+
+.main-header .navbar,
+.navbar-static-top {
+  min-height: 72px;
+  border-radius: 0 24px 24px 0;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+.main-header .push-btn,
+.main-header .full-screen,
+.navbar-custom-menu > .navbar-nav > li > a {
+  width: 42px;
+  height: 42px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px 16px 16px 6px !important;
+  background: #F8FAFC;
+  border: 1px solid var(--smart-border);
+}
+
+.search-bx .input-group {
+  min-height: 48px;
+  padding: 9px 16px 9px 18px;
+  border-radius: 18px 18px 18px 6px;
+  border-left: 4px solid var(--smart-primary);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+  box-shadow: 0 8px 18px rgba(12, 36, 97, 0.07);
+}
+
+.main-sidebar {
+  margin: 12px 0 12px 12px;
+  border: 1px solid rgba(12, 36, 97, 0.10) !important;
+  border-radius: 28px 28px 28px 10px;
+  overflow: hidden;
+  box-shadow: 10px 12px 30px rgba(12, 36, 97, 0.08) !important;
+}
+
+.main-sidebar .sidebar {
+  padding: 14px 8px 18px;
+}
+
+.main-sidebar .sidebar .header {
+  margin: 8px 12px 10px;
+  padding: 10px 12px !important;
+  border-radius: 14px 14px 14px 4px;
+  background: rgba(12, 36, 97, 0.06);
+}
+
+.main-sidebar .sidebar-menu > li > a,
+.main-sidebar .sidebar-menu li.treeview > a,
+.main-sidebar .sidebar-menu li a {
+  min-height: 42px;
+  margin: 4px 10px;
+  padding: 9px 12px !important;
+  border-radius: 16px 16px 16px 5px;
+  border: 1px solid transparent;
+}
+
+.main-sidebar .sidebar-menu > li > a:hover,
+.main-sidebar .sidebar-menu li.treeview > a:hover,
+.main-sidebar .sidebar-menu li a:hover,
+.main-sidebar .treeview-menu > li > a:hover {
+  border-color: rgba(12, 36, 97, 0.12);
+  border-radius: 16px 16px 5px 16px;
+  box-shadow: inset 4px 0 0 var(--smart-secondary), 0 8px 16px rgba(12, 36, 97, 0.08) !important;
+}
+
+.main-sidebar .sidebar-menu li.active > a,
+.main-sidebar .sidebar-menu li > a.ux-link-active,
+.main-sidebar .treeview-menu > li.active > a,
+.main-sidebar .treeview-menu > li > a.ux-link-active {
+  border-color: rgba(215, 38, 79, 0.18);
+  border-radius: 16px 16px 5px 16px;
+  box-shadow: inset 4px 0 0 var(--smart-secondary), 0 8px 16px rgba(12, 36, 97, 0.08) !important;
+}
+
+.main-sidebar .treeview-menu,
+.treeview-menu {
+  margin: 6px 10px 10px 28px;
+  padding: 6px 0 6px 12px;
+  border-left: 2px dashed rgba(12, 36, 97, 0.16);
+  border-radius: 0 0 0 14px;
+}
+
+.main-sidebar .treeview-menu > li > a,
+.treeview-menu > li > a {
+  min-height: 34px;
+  margin: 3px 6px 3px 0;
+  padding: 7px 10px !important;
+  border-radius: 12px 12px 12px 4px;
+}
+
+.main-sidebar .sidebar-menu > li > a .smart-menu-icon,
+.main-sidebar .sidebar-menu > li > a .svg-icon,
+.main-sidebar a:hover .smart-menu-icon,
+.main-sidebar a.ux-link-active .smart-menu-icon {
+  border-radius: 12px 12px 12px 4px !important;
+}
+
+.ux-menu-search {
+  border-radius: 16px 16px 16px 5px !important;
+  min-height: 40px;
+}
+
+.content-wrapper {
+  padding-top: 8px;
+}
+
+.main-footer {
+  margin: 0 16px 14px;
+  padding: 16px 24px;
+  border: 1px solid rgba(12, 36, 97, 0.10) !important;
+  border-radius: 24px 24px 8px 24px;
+  background: rgba(255, 255, 255, 0.97) !important;
+  box-shadow: 0 -8px 24px rgba(12, 36, 97, 0.06);
+}
+
+.main-footer .nav-link,
+.main-footer .badge {
+  border-radius: 12px 12px 12px 4px;
+}
+
+@media (max-width: 991px) {
+  .main-header,
+  .main-sidebar,
+  .main-footer {
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 20px;
+  }
+
+  .main-header .logo-box,
+  .main-header .navbar,
+  .navbar-static-top {
+    min-height: 62px;
+    border-radius: 20px;
+  }
+}

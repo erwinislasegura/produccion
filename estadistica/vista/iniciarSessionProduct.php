@@ -31,7 +31,7 @@ $ARRAYTEMPORADA = $TEMPORADA_ADO->listarTemporadaCBX();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Productores - Volcan Foods</title>
+  <title>Portal Productores - SmartBerry One</title>
   <link rel="icon" href="../../assest/img/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="../../assest/js/sweetalert2@11.js"></script>
@@ -91,8 +91,8 @@ $ARRAYTEMPORADA = $TEMPORADA_ADO->listarTemporadaCBX();
     <!-- Panel izquierdo -->
     <div class="left-panel">
       <div class="logo">
-        <img src="https://volcanfoods.cl/wp-content/uploads/2024/09/volcan_borde.png.webp" alt="Volcan Foods">
-        <p>www.volcanfoods.cl</p>
+        <img src="../../assest/img/logo2.png" alt="SmartBerry One">
+        <p>smartberryone.cl</p>
       </div>
       <h2>PORTAL PRODUCTORES</h2>
       

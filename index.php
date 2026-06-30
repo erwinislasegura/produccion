@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Sistemas - Volcan Foods</title>
+    <title>Sistemas - SmartBerry One</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -212,8 +212,8 @@
     <div class="main-container">
         <div class="left-panel">
             <div class="logo-header">
-                <img src="assest/img/logo2.png" alt="Volcan Foods Logo">
-                <div class="web-address">www.volcanfoods.cl</div>
+                <img src="assest/img/logo2.png" alt="SmartBerry One Logo">
+                <div class="web-address">smartberryone.cl</div>
             </div>
             <div class="glass-card">
                 <div class="content-top-agile">

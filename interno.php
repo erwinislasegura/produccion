@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Sistemas Internos - Volcan Foods</title>
+    <title>Sistemas Internos - SmartBerry One</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="icon" href="assest/img/favicon.png">
@@ -86,8 +86,8 @@
   <div class="container">
     <div class="left-panel">
         <div class="logo-header">
-            <img src="https://volcanfoods.cl/wp-content/uploads/2024/09/volcan_borde.png.webp" alt="Volcan Foods Logo">
-            <div class="web-address">www.volcanfoods.cl</div>
+            <img src="assest/img/logo2.png" alt="SmartBerry One Logo">
+            <div class="web-address">smartberryone.cl</div>
 
         </div>
         <div class="glass-card">

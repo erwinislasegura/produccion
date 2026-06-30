@@ -38,7 +38,7 @@ function h($string) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acceso Intranet - Volcan Foods</title>
+  <title>Acceso Intranet - SmartBerry One</title>
   <link rel="icon" href="../../assest/img/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -88,8 +88,8 @@ function h($string) {
   <div class="container">
     <div class="left-panel">
       <div class="logo">
-        <img src="../../assest/img/volcan-foods-logo-original.png" alt="Volcan Foods">
-        <p>www.volcanfoods.cl</p>
+        <img src="../../assest/img/logo2.png" alt="SmartBerry One">
+        <p>smartberryone.cl</p>
       </div>
       <h2>SELECCIÓN INTRANET</h2>
       <div class="card">

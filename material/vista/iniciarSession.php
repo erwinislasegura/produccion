@@ -37,7 +37,7 @@ if (!isset($_SESSION['login_attempts'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Acceso Intranet - Volcan Foods</title>
+  <title>Acceso Intranet - SmartBerry One</title>
   <link rel="icon" href="../../assest/img/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -65,11 +65,11 @@ if (!isset($_SESSION['login_attempts'])) {
   <div class="container">
     <div class="left-panel">
       <div class="logo">
-        <img src="../../assest/img/volcan-foods-logo-original.png" alt="Volcan Foods" />
-        <p><a href="https://www.volcanfoods.cl" target="_blank" rel="noopener noreferrer">www.volcanfoods.cl</a></p>
+        <img src="../../assest/img/logo2.png" alt="SmartBerry One" />
+        <p><a href="https://smartberryone.cl" target="_blank" rel="noopener noreferrer">smartberryone.cl</a></p>
       </div>
       <h2>SELECCIÓN INTRANET</h2>
-      <p class="subtitle">Accede al módulo de gestión con una experiencia segura, limpia y alineada a Volcan Foods.</p>
+      <p class="subtitle">Accede al módulo de gestión con una experiencia segura, limpia y alineada a SmartBerry One.</p>
 
       <?php if ($_SESSION['login_attempts'] > 0): ?>
       <div class="login-alert">

@@ -37,71 +37,26 @@ if (!isset($_SESSION['login_attempts'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Acceso Intranet - Volcan Foods</title>
+  <title>Acceso Intranet - SmartBerry One</title>
   <link rel="icon" href="../../assest/img/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <script src="../../assest/js/sweetalert2@11.js"></script>
   <style>
-    /* Tus estilos originales */
+    :root{--vf-berry:#7f1734;--vf-berry-dark:#4d0d20;--vf-leaf:#4f8a2f;--vf-leaf-soft:#eaf4e4;--vf-ink:#263238;--vf-muted:#667085;--vf-border:#e6e9ef;--vf-card:rgba(255,255,255,.92)}
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-    body,html{height:100%}
-    .container{display:flex;min-height:100vh}
-    .left-panel{flex:1;max-width:420px;background:#fff;padding:40px;display:flex;flex-direction:column;justify-content:center}
-    .logo{text-align:center;margin-bottom:30px}
-    .logo img{max-width:200px}
-    .logo p {
-      margin-top:8px;
-      color:#555;
-      font-size:14px;
-    }
-    .logo p a {
-      color:#555;
-      text-decoration:none;
-    }
-    .logo p a:hover {
-      text-decoration:underline;
-    }
-    h2{text-align:center;margin-bottom:20px;color:#1a2b4c;font-weight:700}
-    .card{border:1px solid #e0e6ef;border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
-    .card h3{font-size:16px;margin-bottom:15px;color:#1a2b4c}
-    .form-input{width:100%;padding:14px;border:1px solid #ccd4e0;border-radius:8px;margin-bottom:15px;font-size:14px}
-    .btn{width:100%;padding:14px;border:none;border-radius:8px;font-weight:600;cursor:pointer}
-    .btn-login{background:#28a745;color:#fff}
-    .btn-login:hover{background:#218838}
-    .btn-login:disabled{background:#ccc;cursor:not-allowed}
-    .btn-link{display:block;text-align:center;color:#1a2b4c;text-decoration:none;padding:12px;border:1px solid #ccd4e0;border-radius:8px;margin-top:10px}
-    .economics{margin-top:20px}
-    .economics h4{font-size:14px;margin-bottom:12px;color:#1a2b4c}
-    .eco-list {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      justify-items: center;
-      text-align: center;
-    }
-    .eco-item {
-      font-size: 14px;
-      color: #1a2b4c;
-    }
-    .eco-item span {
-      display: block;
-      color: #c62828;
-      font-weight: 700;
-      margin-top: 4px;
-    }
-    .eco-date{text-align:center;font-size:12px;color:#666;margin-top:10px}
-    .right-panel{flex:2;position:relative;overflow:hidden}
-    .slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s}
-    .slide.active{opacity:1}
-    @media(max-width:768px){
-       .container{flex-direction:column}
-       .left-panel{max-width:none;width:100%}
-       .right-panel{min-height:300px}
-       .eco-list {
-         grid-template-columns: repeat(2, 1fr);
-       }
-    }
+    body,html{min-height:100%;background:#f7f8f5;color:var(--vf-ink)}
+    body{background:radial-gradient(circle at top left,rgba(127,23,52,.16),transparent 32%),linear-gradient(135deg,#fff 0%,#f5f8ef 100%)}
+    .container{display:flex;min-height:100vh;position:relative;overflow:hidden}
+    .left-panel{width:min(100%,460px);background:var(--vf-card);backdrop-filter:blur(18px);padding:48px 42px;display:flex;flex-direction:column;justify-content:center;box-shadow:24px 0 70px rgba(77,13,32,.10);z-index:2}
+    .logo{text-align:center;margin-bottom:28px}.logo img{max-width:220px;width:72%;height:auto}.logo p{margin-top:12px;color:var(--vf-muted);font-size:13px}.logo p a{color:var(--vf-berry);text-decoration:none;font-weight:600}.logo p a:hover{text-decoration:underline}
+    h2{text-align:center;margin-bottom:8px;color:var(--vf-berry-dark);font-weight:800;letter-spacing:.08em;font-size:20px;text-transform:uppercase}.subtitle{text-align:center;color:var(--vf-muted);font-size:14px;margin-bottom:24px;line-height:1.5}
+    .card{border:1px solid rgba(127,23,52,.11);border-radius:24px;padding:24px;background:#fff;box-shadow:0 22px 50px rgba(77,13,32,.10);margin-bottom:18px}.card h3{font-size:17px;margin-bottom:18px;color:var(--vf-berry-dark);display:flex;align-items:center;gap:8px}.card h3:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--vf-leaf);box-shadow:0 0 0 6px var(--vf-leaf-soft)}
+    .form-input{width:100%;padding:14px 15px;border:1px solid var(--vf-border);border-radius:14px;margin-bottom:14px;font-size:14px;background:#fbfcfb;transition:border-color .2s,box-shadow .2s,background .2s}.form-input:focus{outline:none;border-color:var(--vf-berry);box-shadow:0 0 0 4px rgba(127,23,52,.12);background:#fff}
+    .prefetch-option{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--vf-muted);line-height:1.4;margin:2px 0 14px}.prefetch-option input{accent-color:var(--vf-berry);margin-top:2px}.security-note{display:flex;align-items:center;justify-content:center;gap:7px;margin:12px 0 18px;color:var(--vf-leaf);font-weight:700;font-size:13px}.security-note .material-icons{font-size:19px}
+    .btn{width:100%;padding:14px;border:none;border-radius:14px;font-weight:800;cursor:pointer;text-decoration:none;display:block;text-align:center;transition:transform .2s,box-shadow .2s,background .2s}.btn:hover{transform:translateY(-1px)}.btn-login{background:linear-gradient(135deg,var(--vf-berry),#a52749);color:#fff;box-shadow:0 14px 28px rgba(127,23,52,.24)}.btn-login:hover{background:linear-gradient(135deg,var(--vf-berry-dark),var(--vf-berry))}.btn-login:disabled{background:#c7c7c7;box-shadow:none;cursor:not-allowed}.btn-link{color:var(--vf-berry-dark);border:1px solid rgba(127,23,52,.18);background:#fff;margin-top:4px}.btn-link:hover{box-shadow:0 12px 26px rgba(77,13,32,.10)}
+    .login-alert{color:#8a5a00;background:#fff7df;border:1px solid #ffe2a3;padding:12px 14px;border-radius:14px;margin-bottom:16px;font-size:13px;font-weight:600}.right-panel{flex:1;position:relative;overflow:hidden;background:#1f2a1d}.right-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(77,13,32,.28),rgba(22,44,19,.12)),radial-gradient(circle at 78% 18%,rgba(255,255,255,.20),transparent 28%);z-index:1}.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.04);transition:opacity 1.5s,transform 6s}.slide.active{opacity:1;transform:scale(1)}
+    @media(max-width:820px){.container{flex-direction:column}.left-panel{width:100%;padding:34px 22px}.right-panel{min-height:280px;order:-1}.logo img{max-width:190px}}
   </style>
   <link rel="stylesheet" href="../../assest/css/fruta-form-compact.css">
 
@@ -110,45 +65,36 @@ if (!isset($_SESSION['login_attempts'])) {
   <div class="container">
     <div class="left-panel">
       <div class="logo">
-        <img src="../../assest/img/volcan-foods-logo-original.png" alt="Volcan Foods" />
-        <p><a href="https://www.volcanfoods.cl" target="_blank" rel="noopener noreferrer">www.volcanfoods.cl</a></p>
+        <img src="../../assest/img/logo2.png" alt="SmartBerry One" />
+        <p><a href="https://smartberryone.cl" target="_blank" rel="noopener noreferrer">smartberryone.cl</a></p>
       </div>
       <h2>SELECCIÓN INTRANET</h2>
+      <p class="subtitle">Accede al módulo de gestión con una experiencia segura, limpia y alineada a SmartBerry One.</p>
 
       <?php if ($_SESSION['login_attempts'] > 0): ?>
-      <div style="color:#856404; background:#fff3cd; padding:10px; border-radius:8px; margin-bottom:15px; font-size:12px;">
+      <div class="login-alert">
         ⚠️ Intentos fallidos: <?php echo $_SESSION['login_attempts']; ?>/5
       </div>
       <?php endif; ?>
 
       <div class="card">
         <h3>Acceso Interno</h3>
-        <form class="form-one-line" data-form-layout="oneline-1" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:0.65rem;padding:0.65rem 0;border-bottom:1px solid #3a3a3a;" method="post" id="loginForm">
+        <form method="post" id="loginForm">
           <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>" />
           <input type="text" class="form-input" placeholder="Usuario" name="NOMBRE" value="<?php echo htmlspecialchars($NOMBRE); ?>" required />
           <input type="password" class="form-input" placeholder="Contraseña" name="CONTRASENA" required minlength="6" />
-          <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:#333; margin-bottom:10px;">
+          <div class="prefetch-option">
             <input type="checkbox" id="PRECARGA_EXPORTACION_MATERIAL" style="margin-top:0;">
             <label for="PRECARGA_EXPORTACION_MATERIAL" style="margin-bottom:0;">Cargar información pesada en segundo plano</label>
           </div>
-          <button type="submit" name="ENTRAR" class="btn btn-login" style="margin-top:15px;">Entrar</button>
-          <div style="display:flex; align-items:center; margin-top:10px; color: #2e7d32; font-weight: 600; font-size: 14px;">
-            <span class="material-icons" style="margin-right:6px; font-size:20px;">lock</span>
+          <div class="security-note">
+            <span class="material-icons">lock</span>
             Conexión segura por SSL
           </div>
+          <button type="submit" name="ENTRAR" class="btn btn-login">Entrar</button>
         </form>
       </div>
       <a href="https://gocreative.cl/smartberry/estadistica/vista/iniciarSession.php" class="btn-link">Portal Productores</a>
-      <div class="economics card">
-        <h4>Indicadores Económicos</h4>
-        <div class="eco-list">
-          <div class="eco-item">UF <span id="uf">...</span></div>
-          <div class="eco-item">Dólar <span id="dolar">...</span></div>
-          <div class="eco-item">Euro <span id="euro">...</span></div>
-          <div class="eco-item">IPC <span id="ipc">...</span></div>
-        </div>
-        <div class="eco-date" id="fechaIndicadores">Cargando...</div>
-      </div>
     </div>
     <div class="right-panel">
       <div class="slide active" style="background-image:url('../../assest/img/abeja.jpg')"></div>
@@ -177,28 +123,6 @@ if (!isset($_SESSION['login_attempts'])) {
         }
       });
     }
-
-    // Cargar indicadores económicos con 1 decimal
-    async function cargarIndicadores() {
-      try {
-        const resp = await fetch("https://mindicador.cl/api");
-        const data = await resp.json();
-        document.getElementById("uf").innerText = "$" + data.uf.valor.toFixed(1);
-        document.getElementById("dolar").innerText = "$" + data.dolar.valor.toFixed(1);
-        document.getElementById("euro").innerText = "$" + data.euro.valor.toFixed(1);
-        // IPC no tiene valor en pesos, es porcentaje, mostrar con 2 decimales y % al final
-        document.getElementById("ipc").innerText = data.ipc.valor.toFixed(2) + "%";
-        document.getElementById("fechaIndicadores").innerText = "Actualizado: " + new Date(data.fecha).toLocaleDateString("es-CL");
-      } catch (e) {
-        document.getElementById("uf").innerText = "N/D";
-        document.getElementById("dolar").innerText = "N/D";
-        document.getElementById("euro").innerText = "N/D";
-        document.getElementById("ipc").innerText = "N/D";
-        document.getElementById("fechaIndicadores").innerText = "Sin conexión";
-      }
-    }
-    cargarIndicadores();
-    setInterval(cargarIndicadores, 60000);
   </script>
 
 <?php

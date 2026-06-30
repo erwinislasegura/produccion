@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fruticola Volcan</title>
+    <title>SmartBerry One</title>
 
     <link rel="icon" href="./assest/img/favicon.png">
 
@@ -31,7 +31,7 @@
 <body class="hold-transition sidebar-collapse sidebar-mini login-page">
     <div class="login-box">
         <div class="login-logo">
-            <img src="./assest/img/volcan-foods-logo-original.png" alt="" height="50px">
+            <img src="./assest/img/logo2.png" alt="" height="50px">
         </div>
         <div class="card border-0">
             <div class="card-header bg-info text-white text-center text-uppercase">

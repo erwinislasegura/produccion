@@ -1087,7 +1087,7 @@ if($ARRAYREGISTROSABIERTOS){
             a: 550,
             b: 4500
         }, {
-            y: 'Volcan Foods',
+            y: 'SmartBerry One',
             a: 800,
             b: 450
         }, {

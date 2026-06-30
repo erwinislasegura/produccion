@@ -42,7 +42,7 @@ function h($string) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selección de Parámetros - Volcan Foods</title>
+  <title>Selección de Parámetros - SmartBerry One</title>
   <link rel="icon" href="../../assest/img/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="../../assest/js/sweetalert2@11.js"></script>
@@ -85,8 +85,8 @@ function h($string) {
     <!-- Panel izquierdo -->
     <div class="left-panel">
       <div class="logo">
-        <img src="../../assest/img/volcan-foods-logo-original.png" alt="Volcan Foods">
-        <p><a href="https://www.volcanfoods.cl" target="_blank" rel="noopener noreferrer" style="color:#555; text-decoration:none;">www.volcanfoods.cl</a></p>
+        <img src="../../assest/img/logo2.png" alt="SmartBerry One">
+        <p><a href="https://smartberryone.cl" target="_blank" rel="noopener noreferrer" style="color:#555; text-decoration:none;">smartberryone.cl</a></p>
       </div>
       <h2>Selección de Parámetros</h2>
       

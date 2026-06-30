@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Sistemas - Volcan Foods</title>
+    <title>Sistemas - SmartBerry One</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -212,8 +212,8 @@
     <div class="main-container">
         <div class="left-panel">
             <div class="logo-header">
-                <img src="assest/img/logo2.png" alt="Volcan Foods Logo">
-                <div class="web-address">www.volcanfoods.cl</div>
+                <img src="assest/img/logo2.png" alt="SmartBerry One Logo">
+                <div class="web-address">smartberryone.cl</div>
             </div>
             <div class="glass-card">
                 <div class="content-top-agile">
@@ -241,28 +241,6 @@
                     </a>
                 </div>
             </div>
-            <div class="indicadores-panel">
-                <div class="indicadores-title">
-                    <span class="material-icons">trending_up</span>
-                    Indicadores Económicos
-                </div>
-                <div class="indicadores-list">
-                    <div class="indicador">
-                        <span class="label">UF</span>
-                        <span class="valor" id="uf">-</span>
-                    </div>
-                    <div class="indicador">
-                        <span class="label">Dólar</span>
-                        <span class="valor" id="dolar">-</span>
-                    </div>
-                    <div class="indicador">
-                        <span class="label">Euro</span>
-                        <span class="valor" id="euro">-</span>
-                    </div>
-                </div>
-                <!-- ✅ Fecha de actualización -->
-                <div class="eco-date" id="fechaIndicadores">Actualizado: -</div>
-            </div>
         </div>
 
         <div class="green-divider">
@@ -287,24 +265,6 @@
             current = (current + 1) % slides.length;
             slides[current].classList.add('active');
         }, 5000);
-
-        // Indicadores económicos
-        async function cargarIndicadores() {
-            try {
-                const resp = await fetch('https://mindicador.cl/api');
-                const data = await resp.json();
-                document.getElementById('uf').textContent = data.uf.valor.toLocaleString('es-CL', {style: 'currency', currency: 'CLP'});
-                document.getElementById('dolar').textContent = data.dolar.valor.toLocaleString('es-CL', {style: 'currency', currency: 'CLP'});
-                document.getElementById('euro').textContent = data.euro.valor.toLocaleString('es-CL', {style: 'currency', currency: 'CLP'});
-                document.getElementById('fechaIndicadores').textContent = "Actualizado: " + new Date(data.fecha).toLocaleDateString("es-CL");
-            } catch (e) {
-                document.getElementById('uf').textContent = "N/D";
-                document.getElementById('dolar').textContent = "N/D";
-                document.getElementById('euro').textContent = "N/D";
-                document.getElementById('fechaIndicadores').textContent = "Sin conexión";
-            }
-        }
-        cargarIndicadores();
     </script>
 </body>
 </html>

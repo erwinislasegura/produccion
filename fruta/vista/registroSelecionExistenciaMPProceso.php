@@ -145,34 +145,6 @@ if (isset($id_dato) && isset($accion_dato) && isset($urlo_dato)) {
     <!- LLAMADA DE LOS ARCHIVOS NECESARIOS PARA DISEÑO Y FUNCIONES BASE DE LA VISTA -!>
         <?php include_once "../../assest/config/urlHead.php"; ?>
         <style>
-            /* sistemRR: estilo visual compacto y redondeado */
-            #form_reg_dato .form-control,
-            #form_reg_dato .select2-container--default .select2-selection--single,
-            #form_reg_dato .select2-container--default .select2-selection--multiple {
-                border-radius: 14px !important;
-                min-height: 34px !important;
-                height: 34px;
-                padding-top: 3px;
-                padding-bottom: 3px;
-                font-size: 12px;
-            }
-
-            #form_reg_dato .form-group {
-                margin-bottom: 10px;
-            }
-
-            #form_reg_dato label {
-                margin-bottom: 4px;
-                font-size: 12px;
-            }
-
-            #form_reg_dato .btn {
-                border-radius: 14px !important;
-                min-height: 34px;
-                padding-top: 5px;
-                padding-bottom: 5px;
-            }
-
             #form_reg_dato table th,
             #form_reg_dato table td {
                 padding-top: 0.4rem;

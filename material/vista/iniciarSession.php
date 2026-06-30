@@ -43,10 +43,10 @@ if (!isset($_SESSION['login_attempts'])) {
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <script src="../../assest/js/sweetalert2@11.js"></script>
   <style>
-    :root{--vf-berry:#7f1734;--vf-berry-dark:#4d0d20;--vf-leaf:#4f8a2f;--vf-leaf-soft:#eaf4e4;--vf-ink:#263238;--vf-muted:#667085;--vf-border:#e6e9ef;--vf-card:rgba(255,255,255,.92)}
+    :root{--vf-berry:#7f1734;--vf-berry-dark:#4d0d20;--vf-leaf:#4f8a2f;--vf-leaf-soft:#eaf4e4;--vf-ink:#263238;--vf-muted:#667085;--vf-border:#e6e9ef;--vf-card:rgba(255,255,255,.92);--vf-page-bg:url('../../assest/img/fondo.jpg')}
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
     body,html{min-height:100%;background:#f7f8f5;color:var(--vf-ink)}
-    body{background:radial-gradient(circle at top left,rgba(127,23,52,.16),transparent 32%),linear-gradient(135deg,#fff 0%,#f5f8ef 100%)}
+    body{background-image:radial-gradient(circle at top left,rgba(127,23,52,.16),transparent 32%),linear-gradient(135deg,rgba(255,255,255,.92) 0%,rgba(245,248,239,.88) 100%),var(--vf-page-bg);background-size:auto,auto,cover;background-position:left top,center,center;background-repeat:no-repeat,no-repeat,no-repeat;background-attachment:fixed,fixed,fixed}
     .container{display:flex;min-height:100vh;position:relative;overflow:hidden}
     .left-panel{width:min(100%,460px);background:var(--vf-card);backdrop-filter:blur(18px);padding:48px 42px;display:flex;flex-direction:column;justify-content:center;box-shadow:24px 0 70px rgba(77,13,32,.10);z-index:2}
     .logo{text-align:center;margin-bottom:28px}.logo img{max-width:220px;width:72%;height:auto}.logo p{margin-top:12px;color:var(--vf-muted);font-size:13px}.logo p a{color:var(--vf-berry);text-decoration:none;font-weight:600}.logo p a:hover{text-decoration:underline}

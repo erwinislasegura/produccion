@@ -1811,12 +1811,6 @@ if (isset($_POST)) {
                             <div class="box">                               
                                  <div class="box-header with-border bg-primary">                                   
                                     <h4 class="box-title">Registro de Recepción</h4>
-                                    <p class="box-subtitle">Formulario compacto para registrar guía, origen, transporte y documento de envases.</p>
-                                    <div class="form-status-strip" aria-label="Resumen del registro">
-                                        <span class="status-chip"><i class="fa fa-hashtag"></i> <?php echo $NUMEROVER != "" ? "Recepción " . $NUMEROVER : "Nueva recepción"; ?></span>
-                                        <span class="status-chip <?php echo $ESTADO == "1" ? "status-closed" : "status-open"; ?>"><i class="fa <?php echo $ESTADO == "1" ? "fa-lock" : "fa-unlock"; ?>"></i> <?php echo $ESTADO == "1" ? "Cerrada" : "Editable"; ?></span>
-                                        <span class="status-chip"><i class="fa fa-calendar"></i> <?php echo $FECHARECEPCION; ?></span>
-                                    </div>
                                 </div>
                                 <div class="box-body ">
                                     <div class="vextra-section">

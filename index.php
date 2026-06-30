@@ -1,270 +1,564 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Sistemas - SmartBerry One</title>
+    <title>SmartBerry ONE - Acceso</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="icon" href="assest/img/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
     <style>
         :root {
-            --azul: #0a3a6a;
-            --rojo: #a12a1a;
-            --verde: #4caf50;
-            --blanco: #fff;
-            --gris: #f5f7fa;
+            --azul: #001b5d;
+            --azul-suave: #f3f6fb;
+            --rojo: #d81046;
+            --verde: #238b3b;
+            --texto: #1f2a44;
+            --texto-suave: #6f7b90;
+            --borde: #e3e9f0;
+            --fondo: #f6f8fb;
+            --blanco: #ffffff;
         }
-        html, body {
-            height: 100%;
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
             margin: 0;
-            font-family: 'Montserrat', Arial, sans-serif;
-            background: var(--gris);
-        }
-        body, .main-container {
-            min-height: 100vh;
-            width: 100vw;
-        }
-        .main-container {
-            display: flex;
-            min-height: 100vh;
-            position: relative;
-        }
-        .left-panel {
-            flex: 1.1 0 0;
-            min-width: 340px;
-            max-width: 440px;
-            background: var(--blanco);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            z-index: 2;
-            position: relative;
-            padding: 0 0 48px 0;
-        }
-        .logo-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 48px;
-            margin-top: 40px;
             width: 100%;
+            min-height: 100%;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: var(--fondo);
+            color: var(--texto);
         }
-        .logo-header img {
-            width: 180px;
-            max-width: 80vw;
-            margin-bottom: 14px;
-            filter: drop-shadow(0 2px 8px rgba(10,58,106,0.08));
+
+        body {
+            overflow-x: hidden;
         }
-        .web-address {
-            font-size: 1.08rem;
-            color: var(--azul);
-            font-weight: 600;
-            text-align: center;
+
+        .main-container {
+            width: 100%;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 440px 1fr;
+            background: var(--fondo);
         }
-        .glass-card {
+
+        .left-panel {
             background: var(--blanco);
-            border-radius: 16px;
-            box-shadow: 0 2px 12px rgba(10,58,106,0.04);
-            border: 1px solid #e6eaf0;
-            padding: 32px 28px 24px 28px;
+            border-right: 1px solid var(--borde);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 38px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .login-box {
             width: 100%;
             max-width: 360px;
-            margin: 0 auto 36px auto;
-            display: flex;
-            flex-direction: column;
+        }
+
+        .logo-header {
+            margin-bottom: 28px;
+        }
+
+        .logo-header img {
+            width: 100%;
+            max-width: 295px;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .system-label {
+            display: inline-flex;
             align-items: center;
+            gap: 7px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--verde);
+            background: #f4faf6;
+            border: 1px solid #dcefe2;
+            border-radius: 999px;
+            padding: 7px 11px;
+            margin-bottom: 14px;
         }
-        .content-top-agile h2 {
-            font-size: 1.18rem;
-            font-weight: 700;
+
+        .system-label .material-icons-round {
+            font-size: 15px;
+        }
+
+        .login-title {
+            margin: 0;
             color: var(--azul);
-            margin-bottom: 24px;
-            text-align: center;
+            font-size: 1.26rem;
+            line-height: 1.35;
+            font-weight: 600;
+            letter-spacing: -0.02em;
         }
+
+        .login-subtitle {
+            margin: 10px 0 0;
+            color: var(--texto-suave);
+            font-size: 0.82rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .web-address {
+            margin-top: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--azul);
+            font-size: 0.78rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .web-address .material-icons-round {
+            font-size: 16px;
+            color: var(--rojo);
+        }
+
+        .access-card {
+            background: var(--blanco);
+            border: 1px solid var(--borde);
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 14px 34px rgba(0, 27, 93, 0.07);
+        }
+
+        .card-title {
+            margin: 0 0 14px;
+            color: var(--azul);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
         .button-grid {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            width: 100%;
+            gap: 10px;
         }
-        .modern-btn-card {
+
+        .access-btn {
+            width: 100%;
+            min-height: 68px;
+            display: grid;
+            grid-template-columns: 38px 1fr 20px;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border: 1px solid var(--borde);
+            border-radius: 12px;
+            background: var(--blanco);
+            color: var(--azul);
+            text-decoration: none;
+            transition: all 0.18s ease;
+        }
+
+        .access-btn:hover {
+            border-color: #bfd7c6;
+            background: #fafdfb;
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(0, 27, 93, 0.06);
+        }
+
+        .icon-box {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            background: var(--blanco);
-            border-radius: 8px;
-            border: 1.2px solid #bfc9d8;
-            padding: 12px 18px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
+            justify-content: center;
+            background: var(--azul-suave);
             color: var(--azul);
-            transition: all 0.18s;
-            width: 100%;
+            transition: all 0.18s ease;
         }
-        .modern-btn-card .material-icons {
-            font-size: 1.2rem;
-            color: var(--azul);
-            background: #f2f6fa;
-            border-radius: 50%;
-            padding: 4px;
-        }
-        .modern-btn-card:hover {
-            background: #f2f6fa;
-            border: 1.2px solid var(--verde);
-        }
-        .modern-btn-card:hover .material-icons {
+
+        .access-btn:hover .icon-box {
+            background: #eef8f1;
             color: var(--verde);
-            background: #e8f5e9;
         }
+
+        .icon-box .material-icons-round {
+            font-size: 21px;
+        }
+
         .btn-content {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            gap: 3px;
         }
+
         .btn-title {
-            font-size: 1rem;
-            font-weight: 700;
+            color: var(--azul);
+            font-size: 0.86rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
+
         .btn-desc {
-            font-size: 0.89rem;
-            color: #7a8ca0;
+            color: var(--texto-suave);
+            font-size: 0.72rem;
+            line-height: 1.35;
+            font-weight: 400;
         }
-        .indicadores-panel {
-            width: 100%;
-            max-width: 360px;
-            margin: 0 auto;
-            background: var(--blanco);
-            border-radius: 12px;
-            box-shadow: 0 1px 6px rgba(10,58,106,0.03);
-            border: 1px solid #e6eaf0;
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+
+        .arrow-icon {
+            color: #9aa6b8;
+            font-size: 20px;
+            transition: all 0.18s ease;
         }
-        .indicadores-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--azul);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .indicadores-list {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            gap: 20px;
-        }
-        .indicador {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 0.95rem;
-            color: var(--azul);
-            min-width: 70px;
-        }
-        .indicador .valor {
-            font-size: 1.05em;
-            font-weight: 700;
+
+        .access-btn:hover .arrow-icon {
             color: var(--rojo);
-            margin-top: 2px;
+            transform: translateX(2px);
         }
-        .eco-date {
-            font-size: 0.85rem;
-            color: #666;
+
+        .values-row {
+            margin-top: 16px;
+            padding-top: 15px;
+            border-top: 1px solid var(--borde);
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .value-item {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: var(--texto-suave);
+            font-size: 0.63rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
             text-align: center;
-            margin-top: 6px;
         }
-        .green-divider {
-            width: 18px;
-            min-width: 18px;
-            height: 100vh;
+
+        .value-item .material-icons-round {
+            font-size: 15px;
+            color: var(--verde);
         }
-        .green-divider svg {
-            height: 100%;
-            width: 100%;
+
+        .footer-text {
+            margin-top: 18px;
+            text-align: center;
+            color: #8b96a8;
+            font-size: 0.68rem;
+            line-height: 1.5;
+            font-weight: 400;
         }
+
         .right-panel {
-            flex: 2;
             position: relative;
+            min-height: 100vh;
             overflow: hidden;
+            background: #0b1f45;
         }
-        .slider-bg .slide {
+
+        .slider-bg {
             position: absolute;
-            width: 100%; height: 100%;
+            inset: 0;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
             background-size: cover;
             background-position: center;
             opacity: 0;
-            transition: opacity 1.5s;
+            transition: opacity 1.2s ease;
         }
-        .slider-bg .slide.active {
+
+        .slide.active {
             opacity: 1;
+        }
+
+        .image-cover {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 27, 93, 0.34);
+            z-index: 1;
+        }
+
+        .right-info {
+            position: absolute;
+            left: 42px;
+            bottom: 42px;
+            z-index: 2;
+            width: calc(100% - 84px);
+            max-width: 520px;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+        }
+
+        .right-info h2 {
+            margin: 0;
+            color: var(--azul);
+            font-size: 1.12rem;
+            line-height: 1.35;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .right-info p {
+            margin: 9px 0 0;
+            color: #5d697c;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .right-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .right-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: #f7f9fc;
+            border: 1px solid #e5ebf2;
+            color: var(--azul);
+            font-size: 0.68rem;
+            font-weight: 500;
+        }
+
+        .right-tag .material-icons-round {
+            font-size: 15px;
+            color: var(--verde);
+        }
+
+        @media (max-width: 980px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .left-panel {
+                order: 2;
+                padding: 32px 22px 38px;
+                border-right: none;
+            }
+
+            .right-panel {
+                order: 1;
+                min-height: 300px;
+            }
+
+            .right-info {
+                left: 22px;
+                bottom: 22px;
+                width: calc(100% - 44px);
+                max-width: none;
+                padding: 18px;
+            }
+
+            .login-box {
+                max-width: 420px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .right-panel {
+                min-height: 250px;
+            }
+
+            .right-info {
+                display: none;
+            }
+
+            .logo-header img {
+                max-width: 260px;
+            }
+
+            .login-title {
+                font-size: 1.14rem;
+            }
+
+            .login-subtitle {
+                font-size: 0.78rem;
+            }
+
+            .access-card {
+                padding: 16px;
+            }
+
+            .access-btn {
+                grid-template-columns: 36px 1fr 18px;
+                min-height: 66px;
+            }
+
+            .values-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .value-item {
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="main-container">
-        <div class="left-panel">
-            <div class="logo-header">
-                <img src="assest/img/logo2.png" alt="SmartBerry One Logo">
-                <div class="web-address">smartberryone.cl</div>
-            </div>
-            <div class="glass-card">
-                <div class="content-top-agile">
-                    <h2>SELECCIÓN INTRANET</h2>
+
+    <main class="main-container">
+
+        <section class="left-panel">
+            <div class="login-box">
+
+                <div class="logo-header">
+                    <img src="assest/img/logo2.png" alt="SmartBerry ONE">
+
+                    <div class="system-label">
+                        <span class="material-icons-round">verified_user</span>
+                        Plataforma privada
+                    </div>
+
+                    <h1 class="login-title">
+                        Acceso a sistemas SmartBerry ONE
+                    </h1>
+
+                    <p class="login-subtitle">
+                        Selecciona el portal correspondiente para ingresar a la plataforma.
+                    </p>
+
+                    <a class="web-address" href="https://www.volcanfoods.cl" target="_blank">
+                        <span class="material-icons-round">language</span>
+                        www.smartberryone.cl
+                    </a>
                 </div>
-                <div class="button-grid">
-                    <!-- ✅ Corregido el enlace a acceso interno -->
-                    <a href="./interno.php/" style="text-decoration: none;">
-                        <button type="button" class="modern-btn-card">
-                            <span class="material-icons">account_circle</span>
+
+                <div class="access-card">
+                    <h2 class="card-title">Seleccionar acceso</h2>
+
+                    <div class="button-grid">
+
+                        <a href="./interno.php" class="access-btn">
+                            <span class="icon-box">
+                                <span class="material-icons-round">account_circle</span>
+                            </span>
+
                             <span class="btn-content">
                                 <span class="btn-title">Acceso Interno</span>
-                                <span class="btn-desc">Usuarios internos y administrativos</span>
+                                <span class="btn-desc">Usuarios administrativos y equipo interno.</span>
                             </span>
-                        </button>
-                    </a>
-                    <a href="./productor/" style="text-decoration: none;">
-                        <button type="button" class="modern-btn-card">
-                            <span class="material-icons">warehouse</span>
+
+                            <span class="material-icons-round arrow-icon">arrow_forward</span>
+                        </a>
+
+                        <a href="./productor/" class="access-btn">
+                            <span class="icon-box">
+                                <span class="material-icons-round">agriculture</span>
+                            </span>
+
                             <span class="btn-content">
                                 <span class="btn-title">Portal Productores</span>
-                                <span class="btn-desc">Acceso para productores registrados</span>
+                                <span class="btn-desc">Acceso para productores registrados.</span>
                             </span>
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
 
-        <div class="green-divider">
-            <svg viewBox="0 0 18 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9,0 Q18,500 9,1000" stroke="#4caf50" stroke-width="3" fill="none"/>
-            </svg>
-        </div>
-        <div class="right-panel">
+                            <span class="material-icons-round arrow-icon">arrow_forward</span>
+                        </a>
+
+                    </div>
+
+                    <div class="values-row">
+                        <div class="value-item">
+                            <span class="material-icons-round">eco</span>
+                            Trazabilidad
+                        </div>
+
+                        <div class="value-item">
+                            <span class="material-icons-round">inventory_2</span>
+                            Transparencia
+                        </div>
+
+                        <div class="value-item">
+                            <span class="material-icons-round">shield</span>
+                            Confianza
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-text">
+                    SmartBerry ONE · Del campo al mundo<br>
+                    Acceso exclusivo para usuarios autorizados.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="right-panel">
             <div class="slider-bg">
                 <div class="slide active" style="background-image: url('assest/img/abeja.jpg');"></div>
                 <div class="slide" style="background-image: url('assest/img/arandano.jpg');"></div>
                 <div class="slide" style="background-image: url('assest/img/esparragos.jpg');"></div>
             </div>
-        </div>
-    </div>
+
+            <div class="image-cover"></div>
+
+            <div class="right-info">
+                <h2>Gestión productiva, trazabilidad y control operacional</h2>
+
+                <p>
+                    Plataforma diseñada para conectar el trabajo de campo,
+                    productores y procesos internos en un entorno seguro.
+                </p>
+
+                <div class="right-tags">
+                    <div class="right-tag">
+                        <span class="material-icons-round">eco</span>
+                        Campo
+                    </div>
+
+                    <div class="right-tag">
+                        <span class="material-icons-round">qr_code_scanner</span>
+                        Trazabilidad
+                    </div>
+
+                    <div class="right-tag">
+                        <span class="material-icons-round">public</span>
+                        Exportación
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
     <script>
-        // Slider automático
         const slides = document.querySelectorAll('.slider-bg .slide');
         let current = 0;
+
         setInterval(() => {
             slides[current].classList.remove('active');
             current = (current + 1) % slides.length;
             slides[current].classList.add('active');
         }, 5000);
     </script>
+
 </body>
 </html>

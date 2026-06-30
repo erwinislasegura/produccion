@@ -1265,3 +1265,71 @@ table.dataTable thead .sorting_desc_disabled::after,
     max-width: calc(100% - 10px);
   }
 }
+
+/* Correcciones finales: menú sin solapes y footer fijo inferior */
+html,
+body {
+  padding-bottom: 52px;
+}
+
+.content-wrapper {
+  padding-bottom: 64px;
+}
+
+.main-sidebar .sidebar-menu li > a,
+.main-sidebar .treeview-menu li > a {
+  display: flex !important;
+  align-items: center;
+  width: auto;
+  max-width: calc(100% - 10px);
+  line-height: 1.25;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.main-sidebar .sidebar-menu li > a::after,
+.main-sidebar .treeview-menu li > a::after {
+  display: none !important;
+  content: none !important;
+}
+
+.main-sidebar .sidebar-menu li > a > span:not(.pull-right-container):not(.pull-left-container):not(.smart-menu-icon),
+.main-sidebar .treeview-menu li > a > span:not(.pull-right-container):not(.pull-left-container):not(.smart-menu-icon) {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.main-sidebar .treeview-menu,
+.main-sidebar .treeview-menu .treeview-menu,
+.main-sidebar .treeview-menu .treeview-menu .treeview-menu {
+  margin-left: 10px !important;
+  padding-left: 6px !important;
+}
+
+.main-sidebar .treeview-menu > li > a,
+.main-sidebar .treeview-menu .treeview-menu > li > a,
+.main-sidebar .treeview-menu .treeview-menu .treeview-menu > li > a {
+  max-width: calc(100% - 6px);
+  padding-right: 6px !important;
+  font-size: 11px;
+}
+
+.main-sidebar .pull-right-container,
+.main-sidebar .pull-left-container {
+  min-width: 14px;
+  padding-left: 4px;
+}
+
+.main-footer {
+  position: fixed !important;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3000;
+}
